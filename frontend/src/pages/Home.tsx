@@ -121,12 +121,14 @@ export default function Home() {
                   transition={{ duration: 0.3 }}
                   className="bg-card p-8 rounded-2xl border border-border hover:border-primary/30 hover:shadow-2xl transition-all duration-300 h-full group"
                 >
-                  <div className={`w-14 h-14 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <feature.icon className="w-7 h-7 text-white" />
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className={`w-14 h-14 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                      <feature.icon className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {feature.title}
+                    </h3>
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {feature.title}
-                  </h3>
                   <p className="text-muted-foreground leading-relaxed">
                     {feature.description}
                   </p>
@@ -182,10 +184,10 @@ export default function Home() {
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
                       whileHover={{ scale: 1.02, x: 4 }}
-                      className="flex items-center justify-between p-5 bg-gradient-blue-light rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-300 cursor-pointer"
+                      className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-5 bg-gradient-blue-light rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-300 cursor-pointer gap-2"
                     >
-                      <span className="text-foreground font-medium">{item.label}</span>
-                      <span className={`bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent font-bold text-lg`}>
+                      <span className="text-foreground font-medium text-sm sm:text-base">{item.label}</span>
+                      <span className={`bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent font-bold text-xl sm:text-lg`}>
                         {item.value}
                       </span>
                     </motion.div>
