@@ -11,8 +11,12 @@ node_modules
 dist
 dist-ssr
 *.local
+
+.qodo/*
 .qodo
 .kombai
+.kombai/*
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
