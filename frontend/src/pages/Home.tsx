@@ -49,7 +49,7 @@ export default function Home() {
             alt="Modern fintech banking dashboard"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/85 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 via-green-800/85 to-transparent" />
         </div>
 
         {/* Content */}

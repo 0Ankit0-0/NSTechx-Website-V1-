@@ -93,7 +93,7 @@ export default function Product() {
               <p className="text-gray-400 leading-relaxed">
                 Built as a future-ready RegTech solution, Verif.ai transforms how 
                 financial institutions manage transaction reconciliation, regulatory 
-                reporting, and dispute resolution—bringing intelligence, automation, 
+                reporting, and dispute resolution-bringing intelligence, automation, 
                 and control into a single platform.
               </p>
             </AnimatedSection>
