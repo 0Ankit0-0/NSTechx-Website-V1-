@@ -72,12 +72,14 @@ export default function Product() {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
-              <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full mb-6">
-                <img
-                  src={verifLogo}
-                  alt="Verif.ai Logo"
-                  className="h-12 w-auto"
-                />
+              <div className="inline-flex items-center gap-3 bg-white/10 px-4 py-2 rounded-full mb-6">
+                <div className="bg-white rounded-full p-2 flex items-center justify-center">
+                  <img
+                    src={verifLogo}
+                    alt="Verif.ai Logo"
+                    className="h-12 w-auto"
+                  />
+                </div>
                 <span className="text-blue-400 font-medium">Verif.ai</span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
