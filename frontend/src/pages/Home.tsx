@@ -1,22 +1,27 @@
 import { Link } from "react-router-dom";
-import { Shield, Zap, BarChart3, CheckCircle2, ArrowRight } from "lucide-react";
+import { ShieldCheck, Sparkles, LayoutDashboard, CheckCircle2, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { AnimatedSection, FadeIn } from "@/components/AnimatedSection";
 import heroImage from "@/assets/hero-fintech.jpg";
 
 const features = [
   {
-    icon: Shield,
+    icon: ShieldCheck,
     title: "Regulatory Compliance",
     description: "Audit-ready solutions that meet evolving regulatory expectations and standards.",
+    color: "from-blue-500 to-cyan-500",
   },
   {
-    icon: Zap,
+    icon: Sparkles,
     title: "Real-Time Processing",
     description: "Near real-time visibility across all transactions for faster decision-making.",
+    color: "from-purple-500 to-pink-500",
   },
   {
-    icon: BarChart3,
+    icon: LayoutDashboard,
     title: "Intelligent Automation",
     description: "AI-driven reconciliation that reduces manual effort and operational costs.",
+    color: "from-emerald-500 to-teal-500",
   },
 ];
 
@@ -33,81 +38,110 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center">
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img
+          <motion.img
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
             src={heroImage}
             alt="Modern fintech banking dashboard"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-secondary/85" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/85 to-transparent" />
         </div>
 
         {/* Content */}
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
-            <span className="inline-block text-primary font-medium text-sm uppercase tracking-wider mb-4">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-block text-blue-300 font-medium text-sm uppercase tracking-wider mb-4"
+            >
               Enterprise Fintech Solutions
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-6">
+            </motion.span>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+            >
               Future-Ready Reconciliation for Banks & Financial Institutions
-            </h1>
-            <p className="text-lg md:text-xl text-secondary-foreground/80 leading-relaxed mb-10 max-w-2xl">
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-lg md:text-xl text-blue-100 leading-relaxed mb-10 max-w-2xl"
+            >
               AI-driven, system-agnostic reconciliation and RegTech solutions that 
               simplify complex financial operations, ensure regulatory compliance, 
               and provide near real-time visibility across transactions.
-            </p>
-            <Link
-              to="/product"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Explore Our Solution
-              <ArrowRight size={18} />
-            </Link>
+              <Link
+                to="/product"
+                className="inline-flex items-center gap-2 bg-gradient-blue text-white px-8 py-4 rounded-lg font-medium hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                Explore Our Solution
+                <ArrowRight size={18} />
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-gradient-blue-light">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Why Choose NStechX
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Delivering measurable operational outcomes with enhanced transparency 
-              and audit-ready compliance.
-            </p>
-          </div>
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Why Choose NStechX
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Delivering measurable operational outcomes with enhanced transparency 
+                and audit-ready compliance.
+              </p>
+            </div>
+          </FadeIn>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="bg-card p-8 rounded-xl border border-border hover:shadow-lg transition-shadow"
-              >
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                  <feature.icon className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+            {features.map((feature, index) => (
+              <AnimatedSection key={feature.title} delay={index * 0.1}>
+                <motion.div
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-card p-8 rounded-2xl border border-border hover:border-primary/30 hover:shadow-2xl transition-all duration-300 h-full group"
+                >
+                  <div className={`w-14 h-14 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <feature.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
+                </motion.div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
       {/* Capabilities Section */}
-      <section className="py-24 bg-card">
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <AnimatedSection>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Comprehensive Financial Operations Platform
               </h2>
@@ -117,55 +151,79 @@ export default function Home() {
                 across India's expanding fintech landscape.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
-                {capabilities.map((capability) => (
-                  <div key={capability} className="flex items-center gap-3">
+                {capabilities.map((capability, index) => (
+                  <motion.div
+                    key={capability}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                    className="flex items-center gap-3"
+                  >
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
                     <span className="text-foreground">{capability}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
-            <div className="bg-background rounded-2xl p-8 border border-border">
-              <div className="space-y-6">
-                <div className="flex items-center justify-between p-4 bg-card rounded-lg border border-border">
-                  <span className="text-foreground font-medium">Transaction Processing</span>
-                  <span className="text-primary font-semibold">Real-time</span>
-                </div>
-                <div className="flex items-center justify-between p-4 bg-card rounded-lg border border-border">
-                  <span className="text-foreground font-medium">Compliance Coverage</span>
-                  <span className="text-primary font-semibold">100%</span>
-                </div>
-                <div className="flex items-center justify-between p-4 bg-card rounded-lg border border-border">
-                  <span className="text-foreground font-medium">Integration Type</span>
-                  <span className="text-primary font-semibold">System-Agnostic</span>
-                </div>
-                <div className="flex items-center justify-between p-4 bg-card rounded-lg border border-border">
-                  <span className="text-foreground font-medium">Automation Level</span>
-                  <span className="text-primary font-semibold">AI-Driven</span>
+            </AnimatedSection>
+            <AnimatedSection delay={0.2}>
+              <div className="bg-card rounded-2xl p-8 border border-border shadow-lg">
+                <div className="space-y-4">
+                  {[
+                    { label: "Transaction Processing", value: "Real-time", gradient: "from-blue-500 to-cyan-500" },
+                    { label: "Compliance Coverage", value: "100%", gradient: "from-purple-500 to-pink-500" },
+                    { label: "Integration Type", value: "System-Agnostic", gradient: "from-emerald-500 to-teal-500" },
+                    { label: "Automation Level", value: "AI-Driven", gradient: "from-orange-500 to-red-500" },
+                  ].map((item, index) => (
+                    <motion.div
+                      key={item.label}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      whileHover={{ scale: 1.02, x: 4 }}
+                      className="flex items-center justify-between p-5 bg-gradient-blue-light rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-300 cursor-pointer"
+                    >
+                      <span className="text-foreground font-medium">{item.label}</span>
+                      <span className={`bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent font-bold text-lg`}>
+                        {item.value}
+                      </span>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-secondary">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-6">
-            Ready to Transform Your Financial Operations?
-          </h2>
-          <p className="text-secondary-foreground/80 max-w-2xl mx-auto mb-10">
-            Discover how Verif.ai can streamline your reconciliation, settlement, 
-            and dispute management processes.
-          </p>
-          <Link
-            to="/product"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
-          >
-            Learn About Verif.ai
-            <ArrowRight size={18} />
-          </Link>
+      <section className="py-24 bg-gradient-blue-light relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
+        </div>
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <AnimatedSection>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Ready to Transform Your Financial Operations?
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto mb-10">
+              Discover how Verif.ai can streamline your reconciliation, settlement, 
+              and dispute management processes.
+            </p>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                to="/product"
+                className="inline-flex items-center gap-2 bg-gradient-blue text-white px-8 py-4 rounded-lg font-medium hover:shadow-2xl transition-all duration-300"
+              >
+                Learn About Verif.ai
+                <ArrowRight size={18} />
+              </Link>
+            </motion.div>
+          </AnimatedSection>
         </div>
       </section>
     </>
