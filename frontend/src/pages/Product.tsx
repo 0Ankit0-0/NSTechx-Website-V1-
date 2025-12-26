@@ -19,37 +19,37 @@ const problems = [
     icon: AlertTriangle,
     title: "Manual Reconciliation Costs",
     description: "High operational costs and resource drain from labor-intensive manual reconciliation processes.",
-    color: "from-red-500 to-orange-500",
+    color: "from-orange-500 to-orange-600",
   },
   {
     icon: TrendingUp,
     title: "Digital Transaction Complexity",
     description: "Increasing volume and complexity of digital transactions across multiple channels and systems.",
-    color: "from-blue-500 to-cyan-500",
+    color: "from-green-500 to-green-600",
   },
   {
     icon: FileSearch,
     title: "Regulatory Scrutiny",
     description: "Rising regulatory and audit requirements demanding comprehensive compliance documentation.",
-    color: "from-purple-500 to-pink-500",
+    color: "from-orange-600 to-orange-700",
   },
   {
     icon: ShieldCheck,
     title: "Audit Trail Gaps",
     description: "Lack of independent, auditable reconciliation solutions creating compliance risks.",
-    color: "from-emerald-500 to-teal-500",
+    color: "from-green-600 to-green-700",
   },
   {
     icon: Clock,
     title: "Real-Time Demands",
     description: "Urgent demand for real-time reporting and automation in fast-paced financial environments.",
-    color: "from-amber-500 to-yellow-500",
+    color: "from-orange-500 to-orange-600",
   },
   {
     icon: Layers,
     title: "System Integration",
     description: "Challenges in integrating multiple legacy and modern systems for unified operations.",
-    color: "from-indigo-500 to-blue-500",
+    color: "from-green-500 to-green-600",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function Product() {
                     className="h-12 w-auto"
                   />
                 </div>
-                <span className="text-blue-400 font-medium">Verif.ai</span>
+                {/* <span className="text-green-400 font-medium">Verif.ai</span> */}
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
                 Intelligent Reconciliation Platform

@@ -29,7 +29,7 @@ export default function Contact() {
       {/* Hero Section */}
       <section className="py-24 bg-[hsl(220,60%,10%)]  overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-green-600 to-orange-500" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -63,7 +63,7 @@ export default function Contact() {
                   transition={{ duration: 0.3 }}
                   className="bg-card p-8 rounded-2xl border border-border group hover:border-primary/30 hover:shadow-2xl transition-all duration-300 block"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <item.icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">

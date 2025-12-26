@@ -9,19 +9,19 @@ const features = [
     icon: ShieldCheck,
     title: "Regulatory Compliance",
     description: "Audit-ready solutions that meet evolving regulatory expectations and standards.",
-    color: "from-blue-500 to-cyan-500",
+    color: "from-green-500 to-green-600",
   },
   {
     icon: Sparkles,
     title: "Real-Time Processing",
     description: "Near real-time visibility across all transactions for faster decision-making.",
-    color: "from-purple-500 to-pink-500",
+    color: "from-orange-500 to-orange-600",
   },
   {
     icon: LayoutDashboard,
     title: "Intelligent Automation",
     description: "AI-driven reconciliation that reduces manual effort and operational costs.",
-    color: "from-emerald-500 to-teal-500",
+    color: "from-green-600 to-green-700",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-block text-blue-300 font-medium text-sm uppercase tracking-wider mb-4"
+              className="inline-block text-green-300 font-medium text-sm uppercase tracking-wider mb-4"
             >
               Enterprise Fintech Solutions
             </motion.span>
@@ -75,7 +75,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl text-blue-100 leading-relaxed mb-10 max-w-2xl"
+              className="text-lg md:text-xl text-green-100 leading-relaxed mb-10 max-w-2xl"
             >
               AI-driven, system-agnostic reconciliation and RegTech solutions that 
               simplify complex financial operations, ensure regulatory compliance, 
@@ -172,10 +172,10 @@ export default function Home() {
               <div className="bg-card rounded-2xl p-8 border border-border shadow-lg">
                 <div className="space-y-4">
                   {[
-                    { label: "Transaction Processing", value: "Real-time", gradient: "from-blue-500 to-cyan-500" },
-                    { label: "Compliance Coverage", value: "100%", gradient: "from-purple-500 to-pink-500" },
-                    { label: "Integration Type", value: "System-Agnostic", gradient: "from-emerald-500 to-teal-500" },
-                    { label: "Automation Level", value: "AI-Driven", gradient: "from-orange-500 to-red-500" },
+                    { label: "Transaction Processing", value: "Real-time", gradient: "from-green-500 to-green-600" },
+                    { label: "Compliance Coverage", value: "100%", gradient: "from-orange-500 to-orange-600" },
+                    { label: "Integration Type", value: "System-Agnostic", gradient: "from-green-600 to-green-700" },
+                    { label: "Automation Level", value: "AI-Driven", gradient: "from-orange-600 to-orange-700" },
                   ].map((item, index) => (
                     <motion.div
                       key={item.label}
@@ -202,7 +202,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-24 bg-gradient-blue-light relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-green-600 to-orange-500" />
         </div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <AnimatedSection>

@@ -12,10 +12,10 @@ dist
 dist-ssr
 *.local
 
-.qodo/*
+.qodo\*
 .qodo
 .kombai
-.kombai/*
+.kombai\*
 
 # Editor directories and files
 .vscode/*

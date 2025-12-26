@@ -58,7 +58,7 @@ export default function About() {
       {/* Hero Section */}
       <section className="relative py-24 bg-[hsl(220,60%,10%)] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-green-600 to-orange-500" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -131,7 +131,7 @@ export default function About() {
                   transition={{ duration: 0.3 }}
                   className="bg-card p-10 rounded-2xl border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300 h-full"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                  <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
                     <value.icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-2xl font-semibold text-foreground mb-4">
@@ -226,7 +226,7 @@ export default function About() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-12 text-center">
             {[
-              { stat: "2024", label: "Founded", gradient: "from-blue-500 to-cyan-500" },
+              { stat: "2024", label: "Founded", gradient: "from-green-500 to-green-600" },
               { stat: "India", label: "Headquartered", gradient: "from-purple-500 to-pink-500" },
               { stat: "RegTech", label: "Focus Area", gradient: "from-emerald-500 to-teal-500" },
             ].map((item, index) => (

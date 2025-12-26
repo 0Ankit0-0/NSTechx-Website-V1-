@@ -25,7 +25,7 @@ export function Navbar() {
             <img
               src={logoImage}
               alt="NSTechX Logo"
-              className="h-12 w-auto "
+              className="h-16 lg:h-20 w-auto"
             />
           </Link>
 
