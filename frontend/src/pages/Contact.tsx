@@ -1,6 +1,7 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import Map from "@/assets/Map.png";
 
 const contactInfo = [
   {
@@ -113,9 +114,7 @@ export default function Contact() {
               <div className="bg-card rounded-2xl p-2 border border-border shadow-lg">
                 <div className="aspect-video bg-gradient-blue-light rounded-xl flex items-center justify-center">
                   <div className="text-center">
-                    <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <p className="text-foreground font-medium">Thane, Maharashtra</p>
-                    <p className="text-sm text-muted-foreground">India</p>
+                    <img src={Map} alt="Map" />
                   </div>
                 </div>
               </div>
