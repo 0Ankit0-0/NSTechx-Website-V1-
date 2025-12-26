@@ -1,6 +1,6 @@
 {
-  "name": "NStechX",
-  "short_name": "NS",
+  "name": "NSTechX",
+  "short_name": "NSTechX",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#f3f3f3",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "standalone"
 }

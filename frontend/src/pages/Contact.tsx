@@ -142,7 +142,7 @@ export default function Contact() {
               href="mailto:contactus@nstechx.co.in"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-gradient-blue text-white px-8 py-4 rounded-lg font-medium hover:shadow-2xl transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-gradient-orange text-white px-8 py-4 rounded-lg font-medium hover:shadow-2xl transition-all duration-300"
             >
               <Mail size={18} />
               Email Us Today
