@@ -88,7 +88,7 @@ export default function Home() {
             >
               <Link
                 to="/product"
-                className="inline-flex items-center gap-2 bg-gradient-blue text-white px-8 py-4 rounded-lg font-medium hover:shadow-xl hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-medium hover:shadow-xl hover:scale-105 transition-all duration-300"
               >
                 Explore Our Solution
                 <ArrowRight size={18} />
@@ -219,7 +219,7 @@ export default function Home() {
             >
               <Link
                 to="/product"
-                className="inline-flex items-center gap-2 bg-gradient-blue text-white px-8 py-4 rounded-lg font-medium hover:shadow-2xl transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-medium hover:shadow-2xl transition-all duration-300"
               >
                 Learn About Verif.ai
                 <ArrowRight size={18} />
