@@ -7,12 +7,14 @@ const values = [
   {
     icon: Target,
     title: "Our Mission",
-    description: "To solve real, high-impact challenges faced by the Indian banking and financial services ecosystem through innovative technology solutions.",
+    description:
+      "To solve real, high-impact challenges faced by the Indian banking and financial services ecosystem through innovative technology solutions.",
   },
   {
     icon: Eye,
     title: "Our Vision",
-    description: "To be the leading provider of secure, scalable, and future-ready technology that supports rapid digital transformation in India's expanding fintech landscape.",
+    description:
+      "To be the leading provider of secure, scalable, and future-ready technology that supports rapid digital transformation in India's expanding fintech landscape.",
   },
 ];
 
@@ -71,8 +73,8 @@ export default function About() {
               About NStechX
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              A fintech innovation company built with a vision to solve real, 
-              high-impact challenges faced by the Indian banking and financial 
+              A fintech innovation company built with a vision to solve real,
+              high-impact challenges faced by the Indian banking and financial
               services ecosystem.
             </p>
           </motion.div>
@@ -89,20 +91,20 @@ export default function About() {
               </h2>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p>
-                  NStechX India Pvt. Ltd. is a young and dynamic organization 
-                  that empowers banks, NBFCs, and financial institutions with 
+                  NStechX India Pvt. Ltd. is a young and dynamic organization
+                  that empowers banks, NBFCs, and financial institutions with
                   secure, scalable, and future-ready technology.
                 </p>
                 <p>
-                  Our solutions support rapid digital transformation while 
-                  meeting evolving regulatory expectations. We are designed 
-                  to deliver measurable operational outcomes, enhanced 
+                  Our solutions support rapid digital transformation while
+                  meeting evolving regulatory expectations. We are designed to
+                  deliver measurable operational outcomes, enhanced
                   transparency, and audit-ready compliance.
                 </p>
                 <p>
-                  Positioned for strong growth in India's expanding fintech 
-                  landscape, NStechX combines deep domain expertise with 
-                  cutting-edge technology to address the most pressing 
+                  Positioned for strong growth in India's expanding fintech
+                  landscape, NStechX combines deep domain expertise with
+                  cutting-edge technology to address the most pressing
                   challenges in financial services.
                 </p>
               </div>
@@ -129,14 +131,20 @@ export default function About() {
                 <motion.div
                   whileHover={{ y: -8, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-card p-10 rounded-2xl border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300 h-full"
+                  className="bg-card p-10 rounded-2xl border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300 h-full group"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
-                    <value.icon className="w-7 h-7 text-white" />
+                  {/* Icon + Title row */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                      <value.icon className="w-7 h-7 text-white" />
+                    </div>
+
+                    <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {value.title}
+                    </h3>
                   </div>
-                  <h3 className="text-2xl font-semibold text-foreground mb-4">
-                    {value.title}
-                  </h3>
+
+                  {/* Description */}
                   <p className="text-muted-foreground leading-relaxed">
                     {value.description}
                   </p>
@@ -152,12 +160,13 @@ export default function About() {
         <div className="container mx-auto px-6">
           <FadeIn>
             <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Leadership Team
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Experienced professionals driving innovation in financial technology.
-            </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Leadership Team
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Experienced professionals driving innovation in financial
+                technology.
+              </p>
             </div>
           </FadeIn>
 
@@ -169,15 +178,15 @@ export default function About() {
                   transition={{ duration: 0.3 }}
                   className="bg-card p-8 rounded-xl border border-border text-center group hover:border-primary/30 hover:shadow-xl transition-all duration-300"
                 >
-                <div className="w-24 h-24 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl font-bold text-secondary-foreground">
-                    {member.placeholder}
-                  </span>
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                  {member.name}
-                </h3>
-                <p className="text-muted-foreground text-sm">{member.role}</p>
+                  <div className="w-24 h-24 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-2xl font-bold text-secondary-foreground">
+                      {member.placeholder}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
+                    {member.name}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">{member.role}</p>
                 </motion.div>
               </AnimatedSection>
             ))}
@@ -190,12 +199,12 @@ export default function About() {
         <div className="container mx-auto px-6">
           <FadeIn>
             <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Advisors & Investors
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Strategic partners supporting our growth and vision.
-            </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Advisors & Investors
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Strategic partners supporting our growth and vision.
+              </p>
             </div>
           </FadeIn>
 
@@ -207,13 +216,15 @@ export default function About() {
                   transition={{ duration: 0.3 }}
                   className="bg-card p-8 rounded-xl border border-border text-center group hover:border-primary/30 hover:shadow-xl transition-all duration-300"
                 >
-                <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Users className="w-8 h-8 text-secondary-foreground" />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                  {advisor.name}
-                </h3>
-                <p className="text-muted-foreground text-sm">{advisor.role}</p>
+                  <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Users className="w-8 h-8 text-secondary-foreground" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
+                    {advisor.name}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
+                    {advisor.role}
+                  </p>
                 </motion.div>
               </AnimatedSection>
             ))}
@@ -226,16 +237,30 @@ export default function About() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-12 text-center">
             {[
-              { stat: "2024", label: "Founded", gradient: "from-green-500 to-green-600" },
-              { stat: "India", label: "Headquartered", gradient: "from-purple-500 to-pink-500" },
-              { stat: "RegTech", label: "Focus Area", gradient: "from-emerald-500 to-teal-500" },
+              {
+                stat: "2024",
+                label: "Founded",
+                gradient: "from-green-500 to-green-600",
+              },
+              {
+                stat: "India",
+                label: "Headquartered",
+                gradient: "from-purple-500 to-pink-500",
+              },
+              {
+                stat: "RegTech",
+                label: "Focus Area",
+                gradient: "from-emerald-500 to-teal-500",
+              },
             ].map((item, index) => (
               <AnimatedSection key={item.label} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <p className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent mb-3`}>
+                  <p
+                    className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent mb-3`}
+                  >
                     {item.stat}
                   </p>
                   <p className="text-muted-foreground">{item.label}</p>

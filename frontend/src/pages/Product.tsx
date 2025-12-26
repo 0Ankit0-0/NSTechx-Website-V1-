@@ -6,7 +6,7 @@ import {
   Clock,
   Layers,
   CheckCircle2,
-  ArrowRight
+  ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -18,37 +18,43 @@ const problems = [
   {
     icon: AlertTriangle,
     title: "Manual Reconciliation Costs",
-    description: "High operational costs and resource drain from labor-intensive manual reconciliation processes.",
+    description:
+      "High operational costs and resource drain from labor-intensive manual reconciliation processes.",
     color: "from-orange-500 to-orange-600",
   },
   {
     icon: TrendingUp,
     title: "Digital Transaction Complexity",
-    description: "Increasing volume and complexity of digital transactions across multiple channels and systems.",
+    description:
+      "Increasing volume and complexity of digital transactions across multiple channels and systems.",
     color: "from-green-500 to-green-600",
   },
   {
     icon: FileSearch,
     title: "Regulatory Scrutiny",
-    description: "Rising regulatory and audit requirements demanding comprehensive compliance documentation.",
+    description:
+      "Rising regulatory and audit requirements demanding comprehensive compliance documentation.",
     color: "from-orange-600 to-orange-700",
   },
   {
     icon: ShieldCheck,
     title: "Audit Trail Gaps",
-    description: "Lack of independent, auditable reconciliation solutions creating compliance risks.",
+    description:
+      "Lack of independent, auditable reconciliation solutions creating compliance risks.",
     color: "from-green-600 to-green-700",
   },
   {
     icon: Clock,
     title: "Real-Time Demands",
-    description: "Urgent demand for real-time reporting and automation in fast-paced financial environments.",
+    description:
+      "Urgent demand for real-time reporting and automation in fast-paced financial environments.",
     color: "from-orange-500 to-orange-600",
   },
   {
     icon: Layers,
     title: "System Integration",
-    description: "Challenges in integrating multiple legacy and modern systems for unified operations.",
+    description:
+      "Challenges in integrating multiple legacy and modern systems for unified operations.",
     color: "from-green-500 to-green-600",
   },
 ];
@@ -86,15 +92,15 @@ export default function Product() {
                 Intelligent Reconciliation Platform
               </h1>
               <p className="text-lg text-gray-300 leading-relaxed mb-8">
-                Verif.ai is NStechX's flagship AI-driven, end-to-end reconciliation, 
-                settlement, and dispute management platform designed for modern 
-                banking and fintech environments.
+                Verif.ai is NStechX's flagship AI-driven, end-to-end
+                reconciliation, settlement, and dispute management platform
+                designed for modern banking and fintech environments.
               </p>
               <p className="text-gray-400 leading-relaxed">
-                Built as a future-ready RegTech solution, Verif.ai transforms how 
-                financial institutions manage transaction reconciliation, regulatory 
-                reporting, and dispute resolution-bringing intelligence, automation, 
-                and control into a single platform.
+                Built as a future-ready RegTech solution, Verif.ai transforms
+                how financial institutions manage transaction reconciliation,
+                regulatory reporting, and dispute resolution-bringing
+                intelligence, automation, and control into a single platform.
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.2} className="space-y-4">
@@ -130,32 +136,36 @@ export default function Product() {
         <div className="container mx-auto px-6">
           <FadeIn>
             <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              The Challenges We Address
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Modern financial institutions face complex operational challenges 
-              that demand intelligent, automated solutions.
-            </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                The Challenges We Address
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Modern financial institutions face complex operational
+                challenges that demand intelligent, automated solutions.
+              </p>
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {problems.map((problem, index) => (
-              <AnimatedSection key={problem.title} delay={index * 0.1}>
+          <div className="grid md:grid-cols-3 gap-8">
+            {problems.map((feature, index) => (
+              <AnimatedSection key={feature.title} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ y: -8, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-card p-8 rounded-2xl border border-border group hover:border-primary/30 hover:shadow-xl transition-all duration-300 h-full"
+                  className="bg-card p-8 rounded-2xl border border-border hover:border-primary/30 hover:shadow-2xl transition-all duration-300 h-full group"
                 >
-                  <div className={`w-12 h-12 bg-gradient-to-br ${problem.color} rounded-xl flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <problem.icon className="w-6 h-6 text-white" />
+                  <div className="flex items-center gap-4 mb-4">
+                    <div
+                      className={`w-14 h-14 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}
+                    >
+                      <feature.icon className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {feature.title}
+                    </h3>
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {problem.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {problem.description}
+                  <p className="text-muted-foreground leading-relaxed">
+                    {feature.description}
                   </p>
                 </motion.div>
               </AnimatedSection>
@@ -195,16 +205,17 @@ export default function Product() {
                 The Verif.ai Solution
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Verif.ai delivers a comprehensive platform that unifies reconciliation, 
-                settlement, and dispute management into a single, intelligent workflow. 
-                Our AI-driven approach reduces manual intervention while ensuring 
-                complete regulatory compliance.
+                Verif.ai delivers a comprehensive platform that unifies
+                reconciliation, settlement, and dispute management into a
+                single, intelligent workflow. Our AI-driven approach reduces
+                manual intervention while ensuring complete regulatory
+                compliance.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                With system-agnostic integration capabilities, Verif.ai connects 
-                seamlessly with existing infrastructure, providing financial 
-                institutions with the flexibility to modernize operations without 
-                disrupting established workflows.
+                With system-agnostic integration capabilities, Verif.ai connects
+                seamlessly with existing infrastructure, providing financial
+                institutions with the flexibility to modernize operations
+                without disrupting established workflows.
               </p>
               <motion.div
                 whileHover={{ scale: 1.05 }}

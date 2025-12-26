@@ -43,8 +43,8 @@ export default function Contact() {
               Contact Us
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              Get in touch with our team to learn how NStechX can transform 
-              your financial operations.
+              Get in touch with our team to learn how NStechX can transform your
+              financial operations.
             </p>
           </motion.div>
         </div>
@@ -59,17 +59,25 @@ export default function Contact() {
                 <motion.a
                   href={item.href}
                   target={item.label === "Office" ? "_blank" : undefined}
-                  rel={item.label === "Office" ? "noopener noreferrer" : undefined}
+                  rel={
+                    item.label === "Office" ? "noopener noreferrer" : undefined
+                  }
                   whileHover={{ y: -8, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                   className="bg-card p-8 rounded-2xl border border-border group hover:border-primary/30 hover:shadow-2xl transition-all duration-300 block"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <item.icon className="w-7 h-7 text-white" />
+                  {/* Icon + Label row */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                      <item.icon className="w-7 h-7 text-white" />
+                    </div>
+
+                    <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {item.label}
+                    </h3>
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {item.label}
-                  </h3>
+
+                  {/* Value */}
                   <p className="text-muted-foreground leading-relaxed">
                     {item.value}
                   </p>
@@ -94,8 +102,10 @@ export default function Contact() {
                     NStechX India Private Limited
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    002 – Bldg no. 1, Manorama Nagar<br />
-                    Thane – 400604<br />
+                    002 – Bldg no. 1, Manorama Nagar
+                    <br />
+                    Thane – 400604
+                    <br />
                     Maharashtra, India
                   </p>
                 </div>
@@ -134,7 +144,7 @@ export default function Contact() {
               Ready to Get Started?
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-10">
-              Reach out to our team today and discover how Verif.ai can 
+              Reach out to our team today and discover how Verif.ai can
               streamline your reconciliation and compliance processes.
             </p>
             <motion.a
