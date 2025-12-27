@@ -6,11 +6,11 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import Home from "./pages/Home";
-import Product from "./pages/Product";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import RequestDemo from "./pages/RequestDemo";
 import NotFound from "./pages/NotFound";
-import ReconciliationBanks from "./pages/ReconciliationBanks";
+import ReconciliationBanks from "./pages/products/ReconciliationBanks";
 import ComingSoon from "./pages/ComingSoon";
 
 const queryClient = new QueryClient();
@@ -34,19 +34,7 @@ function AnimatedRoutes() {
             </motion.div>
           }
         />
-        <Route
-          path="/product"
-          element={
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Product />
-            </motion.div>
-          }
-        />
+        
         <Route
           path="/about"
           element={
@@ -70,6 +58,19 @@ function AnimatedRoutes() {
               transition={{ duration: 0.3 }}
             >
               <Contact />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/request-demo"
+          element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <RequestDemo />
             </motion.div>
           }
         />

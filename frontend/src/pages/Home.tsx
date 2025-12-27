@@ -98,10 +98,18 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4"
             >
               <Link
-                to="/product"
+                to="/request-demo"
                 className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-medium hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base"
+              >
+                Request a Demo
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              </Link>
+              <Link
+                to="/product"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/30 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-medium hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base"
               >
                 Explore Our Solution
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -207,10 +215,10 @@ export default function Home() {
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
-                to="/product"
+                to="/request-demo"
                 className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-medium hover:shadow-2xl transition-all duration-300 text-sm sm:text-base"
               >
-                Learn About Verif.ai
+                Request a Demo
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </Link>
             </motion.div>

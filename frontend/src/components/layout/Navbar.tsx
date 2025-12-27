@@ -45,7 +45,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-6">
             {navItems.map((item) => (
               item.dropdown ? (
                 <div key={item.path} className="relative">
@@ -103,6 +103,14 @@ export function Navbar() {
                 </Link>
               )
             ))}
+            
+            {/* Request Demo CTA Button */}
+            <Link
+              to="/request-demo"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-5 py-2.5 rounded-lg font-medium hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm"
+            >
+              Request Demo
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -119,6 +127,15 @@ export function Navbar() {
         {isOpen && (
           <div className="lg:hidden py-4 border-t border-border animate-in slide-in-from-top-4 duration-300">
             <div className="flex flex-col gap-2">
+              {/* Request Demo CTA Button - Mobile */}
+              <Link
+                to="/request-demo"
+                onClick={() => setIsOpen(false)}
+                className="mx-4 mb-2 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300 text-sm"
+              >
+                Request Demo
+              </Link>
+              
               {navItems.map((item, index) => (
                 <div key={item.path}>
                   {item.dropdown ? (
