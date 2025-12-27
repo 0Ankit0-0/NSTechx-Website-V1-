@@ -1,4 +1,4 @@
-import { Target, Eye, Users, CheckCircle2 } from "lucide-react";
+import { Target, Eye, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedSection, FadeIn } from "@/components/AnimatedSection";
 // import aboutImage from "@/assets/about-office.jpg";
@@ -18,41 +18,41 @@ const values = [
   },
 ];
 
-const team = [
-  {
-    name: "Leadership Team",
-    role: "Chief Executive Officer",
-    placeholder: "CEO",
-  },
-  {
-    name: "Leadership Team",
-    role: "Chief Technology Officer",
-    placeholder: "CTO",
-  },
-  {
-    name: "Leadership Team",
-    role: "Chief Operating Officer",
-    placeholder: "COO",
-  },
-  {
-    name: "Leadership Team",
-    role: "Head of Product",
-    placeholder: "HP",
-  },
-];
+// const team = [
+//   {
+//     name: "Leadership Team",
+//     role: "Chief Executive Officer",
+//     placeholder: "CEO",
+//   },
+//   {
+//     name: "Leadership Team",
+//     role: "Chief Technology Officer",
+//     placeholder: "CTO",
+//   },
+//   {
+//     name: "Leadership Team",
+//     role: "Chief Operating Officer",
+//     placeholder: "COO",
+//   },
+//   {
+//     name: "Leadership Team",
+//     role: "Head of Product",
+//     placeholder: "HP",
+//   },
+// ];
 
-const advisors = [
-  {
-    name: "Advisory Board",
-    role: "Strategic Advisor",
-    placeholder: "SA",
-  },
-  {
-    name: "Advisory Board",
-    role: "Investment Partner",
-    placeholder: "IP",
-  },
-];
+// const advisors = [
+//   {
+//     name: "Advisory Board",
+//     role: "Strategic Advisor",
+//     placeholder: "SA",
+//   },
+//   {
+//     name: "Advisory Board",
+//     role: "Investment Partner",
+//     placeholder: "IP",
+//   },
+// ];
 
 export default function About() {
   return (
