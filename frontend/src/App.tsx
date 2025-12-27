@@ -10,6 +10,8 @@ import Product from "./pages/Product";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ReconciliationBanks from "./pages/ReconciliationBanks";
+import ComingSoon from "./pages/ComingSoon";
 
 const queryClient = new QueryClient();
 
@@ -68,6 +70,123 @@ function AnimatedRoutes() {
               transition={{ duration: 0.3 }}
             >
               <Contact />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/reconciliation-banks"
+          element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ReconciliationBanks />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/reconciliation-nbfcs"
+          element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ComingSoon title="Reconciliation for NBFCs" />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/reconciliation-insurance"
+          element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ComingSoon title="Reconciliation for Insurance" />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/reconciliation-fintechs"
+          element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ComingSoon title="Reconciliation for Fintechs" />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/unified-lending-interface"
+          element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ComingSoon title="Unified Lending Interface (ULI)" />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/fraud-risk-management"
+          element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ComingSoon title="Fraud & Risk Management System" />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/our-team"
+          element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ComingSoon title="Our Team" />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/careers"
+          element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ComingSoon title="Careers" />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/newsletter-media"
+          element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ComingSoon title="Newsletter and Media" />
             </motion.div>
           }
         />

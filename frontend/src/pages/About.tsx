@@ -1,7 +1,7 @@
-import { Target, Eye, Users } from "lucide-react";
+import { Target, Eye, Users, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedSection, FadeIn } from "@/components/AnimatedSection";
-import aboutImage from "@/assets/about-office.jpg";
+// import aboutImage from "@/assets/about-office.jpg";
 
 const values = [
   {
@@ -58,74 +58,123 @@ export default function About() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-24 bg-[hsl(220,60%,10%)] overflow-hidden">
+      <section className="relative py-16 md:py-20 lg:py-24 bg-[hsl(220,60%,10%)] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-green-600 to-orange-500" />
         </div>
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            className="max-w-5xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-              About NStechX
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 md:mb-8">
+              Future-Ready AI – driven, system-agnostic RegTech Solutions for
+              Banks and Financial Institutions
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
-              A fintech innovation company built with a vision to solve real,
-              high-impact challenges faced by the Indian banking and financial
-              services ecosystem.
+            <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed">
+              NStechX India Pvt. Ltd. is a young and dynamic organization that
+              empowers banks, NBFCs, and financial institutions with secure,
+              scalable, and future-ready technology. Our solutions support rapid
+              digital transformation while meeting evolving regulatory
+              expectations. We are designed to deliver measurable operational
+              outcomes, enhanced transparency, and audit-ready compliance.
+              Positioned for strong growth in India's expanding fintech
+              landscape, NStechX combines deep domain expertise with
+              cutting-edge technology to address the most pressing challenges in
+              financial services.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Company Overview */}
-      <section className="py-24 bg-gradient-blue-light">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <AnimatedSection>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Empowering Financial Institutions
+      {/* Why NStechX */}
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-blue-light">
+        <div className="container mx-auto px-4 sm:px-6">
+          <FadeIn>
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Why NStechX?
               </h2>
-              <div className="space-y-6 text-muted-foreground leading-relaxed">
-                <p>
-                  NStechX India Pvt. Ltd. is a young and dynamic organization
-                  that empowers banks, NBFCs, and financial institutions with
-                  secure, scalable, and future-ready technology.
-                </p>
-                <p>
-                  Our solutions support rapid digital transformation while
-                  meeting evolving regulatory expectations. We are designed to
-                  deliver measurable operational outcomes, enhanced
-                  transparency, and audit-ready compliance.
-                </p>
-                <p>
-                  Positioned for strong growth in India's expanding fintech
-                  landscape, NStechX combines deep domain expertise with
-                  cutting-edge technology to address the most pressing
-                  challenges in financial services.
-                </p>
-              </div>
+            </div>
+          </FadeIn>
+
+          <div className="space-y-12 md:space-y-16">
+            <AnimatedSection>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-4 md:mb-6">
+                Why We Exist
+              </h3>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
+                The regulatory landscape for Banks and NBFCs is becoming increasingly complex, dynamic, and data-intensive. Frequent regulatory updates, tighter supervision, and growing expectations around transparency, accuracy, and risk management have made compliance a strategic challenge rather than a back-office function. We have formed this Regulatory Technology (RegTech) company with a clear mission: to help financial institutions meet regulatory requirements efficiently, accurately, and at scale.
+              </p>
             </AnimatedSection>
+
+            <AnimatedSection delay={0.1}>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-4 md:mb-6">
+                What We Do
+              </h3>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-4 md:mb-6">
+                Our RegTech solutions are purpose-built for the Banking and NBFC ecosystem, addressing critical regulatory and operational pain points through automation and intelligent controls. Our product suite includes solutions for Reconciliation, Unified Lending Interface (ULI) enablement, Fraud Risk Management Systems (FRMS), and other regulatory reporting and compliance needs.
+              </p>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
+                By reducing manual effort, eliminating data inconsistencies, and enabling real-time monitoring, our solutions help institutions: Stay continuously compliant with evolving regulations, minimize operational and regulatory risk, improve audit readiness and reporting accuracy, focus more on growth and customer outcomes.
+              </p>
+            </AnimatedSection>
+
             <AnimatedSection delay={0.2}>
-              <motion.img
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                src={aboutImage}
-                alt="NStechX Office"
-                className="rounded-2xl shadow-xl w-full"
-              />
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-4 md:mb-6">
+                Our Vision
+              </h3>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
+                We believe regulatory compliance should be proactive, predictable, and technology-driven. Our goal is to become a trusted RegTech partner for Banks and NBFCs, transforming compliance from a cost centre into a source of operational strength and confidence.
+              </p>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
+      {/* Key Features */}
+      <section className="py-16 md:py-20 lg:py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
+          <FadeIn>
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Our Solutions
+              </h2>
+            </div>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            {[
+              "Plug-and-Play Integration – Seamlessly integrates with your existing systems with minimal effort",
+              "AI and block chain technology for adding accuracy, speed and Regulatory Compliance",
+              "Flexible, Low-Impact Onboarding – Go live quickly without major changes to your core platforms",
+              "Eliminate Manual Inefficiencies – Automate operations to reduce cost, errors, and dependency on manual processes",
+              "Built for Transaction Complexity – Designed to handle high-volume, multi-rail digital transactions with ease",
+              "Compliance-Ready by Design – Meets growing regulatory, audit, and governance requirements out of the box",
+              "Truly Independent & Auditable – Provides transparent, system-agnostic reconciliation and reporting",
+              "Real-Time Visibility & Automation – Instant insights, real-time reports, and proactive exception handling",
+            ].map((feature, index) => (
+              <AnimatedSection key={feature} delay={index * 0.05}>
+                <motion.div
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-card p-6 rounded-xl border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 h-full flex items-start gap-3"
+                >
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground text-sm leading-relaxed">{feature}</span>
+                </motion.div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Mission & Vision */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-8">
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-blue-light">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {values.map((value, index) => (
               <AnimatedSection key={value.title} delay={index * 0.1}>
                 <motion.div
@@ -156,21 +205,21 @@ export default function About() {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-24 bg-gradient-blue-light">
-        <div className="container mx-auto px-6">
+      {/* <section className="py-16 md:py-20 lg:py-24 bg-gradient-blue-light">
+        <div className="container mx-auto px-4 sm:px-6">
           <FadeIn>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Leadership Team
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
                 Experienced professionals driving innovation in financial
                 technology.
               </p>
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {team.map((member, index) => (
               <AnimatedSection key={index} delay={index * 0.1}>
                 <motion.div
@@ -192,23 +241,23 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Advisors & Investors */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
+      {/* Advisors & Investors
+      <section className="py-16 md:py-20 lg:py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
           <FadeIn>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Advisors & Investors
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
                 Strategic partners supporting our growth and vision.
               </p>
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto">
             {advisors.map((advisor, index) => (
               <AnimatedSection key={index} delay={index * 0.1}>
                 <motion.div
@@ -230,12 +279,12 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Stats Section */}
-      <section className="py-24 bg-gradient-blue-light">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12 text-center">
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-blue-light">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 text-center">
             {[
               {
                 stat: "2024",

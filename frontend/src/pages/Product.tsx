@@ -74,9 +74,9 @@ export default function Product() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-24 bg-[hsl(220,60%,8%)]">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-16 md:py-20 lg:py-24 bg-[hsl(220,60%,8%)]">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
             <AnimatedSection>
               <div className="inline-flex items-center gap-3 bg-white/10 px-4 py-2 rounded-full mb-6">
                 <div className="bg-white rounded-full p-2 flex items-center justify-center">
@@ -88,19 +88,14 @@ export default function Product() {
                 </div>
                 {/* <span className="text-green-400 font-medium">Verif.ai</span> */}
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4 md:mb-6">
                 Intelligent Reconciliation Platform
               </h1>
-              <p className="text-lg text-gray-300 leading-relaxed mb-8">
-                Verif.ai is NStechX's flagship AI-driven, end-to-end
-                reconciliation, settlement, and dispute management platform
-                designed for modern banking and fintech environments.
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 md:mb-8">
+                Verif.ai is NStechX's flagship AI-driven, end-to-end reconciliation, settlement, and dispute management platform designed for modern BFSI and fintech environments.
               </p>
-              <p className="text-gray-400 leading-relaxed">
-                Built as a future-ready RegTech solution, Verif.ai transforms
-                how financial institutions manage transaction reconciliation,
-                regulatory reporting, and dispute resolution-bringing
-                intelligence, automation, and control into a single platform.
+              <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
+                Built as a future-ready RegTech solution, Verif.ai transforms how financial institutions manage transaction reconciliation, regulatory reporting, and dispute resolution-bringing intelligence, automation, and control into a single platform.
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.2} className="space-y-4">
@@ -132,8 +127,8 @@ export default function Product() {
       </section>
 
       {/* Problems Section */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
+      <section className="py-16 md:py-20 lg:py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -146,7 +141,7 @@ export default function Product() {
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {problems.map((feature, index) => (
               <AnimatedSection key={feature.title} delay={index * 0.1}>
                 <motion.div
@@ -175,9 +170,9 @@ export default function Product() {
       </section>
 
       {/* Solution Section */}
-      <section className="py-24 bg-gradient-blue-light">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-blue-light">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
             <AnimatedSection className="order-2 lg:order-1">
               <div className="bg-card rounded-2xl p-8 border border-border shadow-lg">
                 <h3 className="text-xl font-semibold text-foreground mb-6">
@@ -201,17 +196,17 @@ export default function Product() {
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2} className="order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 md:mb-6">
                 The Verif.ai Solution
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 md:mb-6">
                 Verif.ai delivers a comprehensive platform that unifies
                 reconciliation, settlement, and dispute management into a
                 single, intelligent workflow. Our AI-driven approach reduces
                 manual intervention while ensuring complete regulatory
                 compliance.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-8">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 md:mb-8">
                 With system-agnostic integration capabilities, Verif.ai connects
                 seamlessly with existing infrastructure, providing financial
                 institutions with the flexibility to modernize operations
@@ -223,7 +218,7 @@ export default function Product() {
               >
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 bg-gradient-orange text-white px-6 py-3 rounded-lg font-medium hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center gap-2 bg-gradient-orange text-white px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg font-medium hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
                 >
                   Get In Touch
                   <ArrowRight size={18} />
