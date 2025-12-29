@@ -58,7 +58,10 @@ const formSchema = z.object({
     .regex(/^[0-9+\-\s()]+$/, "Please enter a valid phone number"),
   requirements: z
     .string()
-    .min(20, "Please provide at least 20 characters describing your requirements")
+    .min(
+      20,
+      "Please provide at least 20 characters describing your requirements"
+    )
     .max(1000, "Requirements description must be less than 1000 characters"),
 });
 
@@ -82,35 +85,33 @@ export default function RequestDemo() {
     setIsSubmitting(true);
 
     try {
-      // Format the email content
-      const emailSubject = encodeURIComponent(
-        `Demo Request from ${data.firstName} ${data.lastName}`
-      );
-      const emailBody = encodeURIComponent(`
-Demo Request Details:
-====================
+      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
-Name: ${data.firstName} ${data.lastName}
-Work Email: ${data.workEmail}
-Contact Number: ${data.contactNumber}
+      // Send data to backend API for processing
+      const response = await fetch(`${API_URL}/api/request-demo`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: data.firstName,
+          lastName: data.lastName,
+          workEmail: data.workEmail,
+          contactNumber: data.contactNumber,
+          requirements: data.requirements,
+        }),
+      });
 
-Requirements:
-${data.requirements}
+      if (!response.ok) {
+        throw new Error("Failed to submit request");
+      }
 
-====================
-This is an automated demo request from the NStechX website.
-      `);
-
-      // Email address where demo requests should be sent
-      const recipientEmail = "contactus@nstechx.co.in";
-
-      // Open email client with pre-filled content
-      window.location.href = `mailto:${recipientEmail}?subject=${emailSubject}&body=${emailBody}`;
+      const result = await response.json();
 
       // Show success message
-      toast.success("Request Prepared!", {
+      toast.success("Demo Request Submitted!", {
         description:
-          "Your email client should open shortly with your demo request. Please review and send.",
+          "Thank you for your interest! Our team will contact you within 24 hours.",
       });
 
       // Reset form after successful submission

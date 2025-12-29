@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] md:min-h-[80vh] lg:min-h-[85vh] flex items-center overflow-hidden py-20 md:py-24">
+      <section className="relative min-h-[70vh] md:min-h-[80vh] lg:min-h-[85vh] flex items-center overflow-hidden py-5">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <motion.img
@@ -38,61 +38,37 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-block text-green-300 font-medium text-xs sm:text-sm uppercase tracking-wider mb-6 md:mb-8"
+              className="inline-block text-green-300 font-medium text-xs sm:text-sm uppercase tracking-wider mb-3"
             >
-              Reg-tech Solutions
+              ENTERPRISE REG-TECH SOLUTIONS
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6 md:mb-8"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-6"
             >
-              Future-Ready AI–driven, system-agnostic RegTech Solutions for
-              Banks and Financial Institutions
+              Future-Ready Reconciliation For Banks & Financial Institutions
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg md:text-xl text-green-50 leading-relaxed mb-4 md:mb-6 max-w-3xl mx-auto lg:mx-0"
+              className="text-sm sm:text-base text-green-50 leading-relaxed mb-4 md:mb-6 max-w-3xl mx-auto lg:mx-0 text-justify"
             >
-              NStechX India Pvt. Ltd. is a Reg-tech company built with a vision
-              to solve real, high-impact challenges faced by the Indian banking
-              and financial services ecosystem.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="text-base sm:text-lg md:text-xl text-green-50 leading-relaxed mb-4 md:mb-6 max-w-3xl mx-auto lg:mx-0"
-            >
-              As a young and dynamic organization, we empower banks, NBFCs, and
-              financial institutions with secure, scalable, and future-ready
-              technology that supports rapid digital transformation while
-              meeting evolving regulatory expectations.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-base sm:text-lg md:text-xl text-green-50 leading-relaxed mb-6 md:mb-8 max-w-3xl mx-auto lg:mx-0"
-            >
-              Our solutions are designed to deliver measurable operational
-              outcomes, enhanced transparency, and audit-ready
-              compliance-positioning NStechX for strong growth in India's
-              expanding fintech landscape.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.35 }}
-              className="text-base sm:text-lg md:text-xl text-green-50 leading-relaxed mb-8 md:mb-12 max-w-3xl mx-auto lg:mx-0"
-            >
-              Positioned for strong growth in India's expanding fintech
-              landscape, NStechX combines deep domain expertise with
-              cutting-edge technology to address the most pressing challenges in
-              financial services.
+              NStechX India Pvt. Ltd. is a Reg-tech company built with a
+                vision to solve real, high-impact challenges faced by the Indian
+                banking and financial services ecosystem. As a young and dynamic
+                organization, we empower banks, NBFCs, and financial
+                institutions with secure, scalable, and future-ready technology
+                that supports rapid digital transformation while meeting
+                evolving regulatory expectations. Our solutions are designed to
+                deliver measurable operational outcomes, enhanced transparency,
+                and audit-ready compliance-positioning NStechX for strong growth
+                in India’s expanding fintech landscape. Positioned for strong
+                growth in India's expanding fintech landscape, NStechX combines
+                deep domain expertise with cutting-edge technology to address
+                the most pressing challenges in financial services.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -101,15 +77,8 @@ export default function Home() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <Link
-                to="/request-demo"
-                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-medium hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base"
-              >
-                Request a Demo
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-              </Link>
-              <Link
-                to="/product"
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/30 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-medium hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base"
+                to="/reconciliation-banks"
+                className="inline-flex items-center bg-orange-500 hover:bg-orange-600 backdrop-blur-sm text-white border border-white/30 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-medium hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base"
               >
                 Explore Our Solution
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -119,7 +88,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Capabilities Section */}
+      {/* Capabilities Section
       <section className="py-16 md:py-20 lg:py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
@@ -127,77 +96,38 @@ export default function Home() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 md:mb-6">
                 Comprehensive Financial Operations Platform
               </h2>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 md:mb-10">
-                NStechX provides secure, scalable technology that supports rapid
-                digital transformation while meeting evolving regulatory
-                expectations across India's expanding fintech landscape.
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 md:mb-10 text-justify">
+                NStechX India Pvt. Ltd. is a Reg-tech company built with a
+                vision to solve real, high-impact challenges faced by the Indian
+                banking and financial services ecosystem. As a young and dynamic
+                organization, we empower banks, NBFCs, and financial
+                institutions with secure, scalable, and future-ready technology
+                that supports rapid digital transformation while meeting
+                evolving regulatory expectations. Our solutions are designed to
+                deliver measurable operational outcomes, enhanced transparency,
+                and audit-ready compliance-positioning NStechX for strong growth
+                in India’s expanding fintech landscape. Positioned for strong
+                growth in India's expanding fintech landscape, NStechX combines
+                deep domain expertise with cutting-edge technology to address
+                the most pressing challenges in financial services.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-                {capabilities.map((capability, index) => (
-                  <motion.div
-                    key={capability}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.05 }}
-                    className="flex items-center gap-3"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground">{capability}</span>
-                  </motion.div>
-                ))}
-              </div>
             </AnimatedSection>
-            <AnimatedSection delay={0.2}>
-              <div className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
-                <div className="space-y-4">
-                  {[
-                    {
-                      label: "Transaction Processing",
-                      value: "Real-time",
-                      gradient: "from-green-500 to-green-600",
-                    },
-                    {
-                      label: "Compliance Coverage",
-                      value: "100%",
-                      gradient: "from-orange-500 to-orange-600",
-                    },
-                    {
-                      label: "Integration Type",
-                      value: "System-Agnostic",
-                      gradient: "from-green-600 to-green-700",
-                    },
-                    {
-                      label: "Automation Level",
-                      value: "AI-Driven",
-                      gradient: "from-orange-600 to-orange-700",
-                    },
-                  ].map((item, index) => (
-                    <motion.div
-                      key={item.label}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      whileHover={{ scale: 1.02, x: 4 }}
-                      className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-5 bg-gradient-blue-light rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-300 cursor-pointer gap-2"
-                    >
-                      <span className="text-foreground font-medium text-sm sm:text-base">
-                        {item.label}
-                      </span>
-                      <span
-                        className={`bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent font-bold text-xl sm:text-lg`}
-                      >
-                        {item.value}
-                      </span>
-                    </motion.div>
+            <AnimatedSection>
+              <div className="space-y-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground mb-4">Key Capabilities</h3>
+                <ul className="space-y-3">
+                  {capabilities.map((capability, index) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-sm sm:text-base text-muted-foreground">{capability}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </AnimatedSection>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-16 md:py-20 lg:py-24 bg-gradient-blue-light relative overflow-hidden">

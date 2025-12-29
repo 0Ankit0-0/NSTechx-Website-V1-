@@ -1,318 +1,235 @@
-import { Target, Eye, CheckCircle2 } from "lucide-react";
+import {
+  Target,
+  Eye,
+  CheckCircle2,
+  HelpCircle,
+  ArrowRight,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedSection, FadeIn } from "@/components/AnimatedSection";
-// import aboutImage from "@/assets/about-office.jpg";
+import aboutImage from "@/assets/about-office.jpg";
 
+// Data for Mission & Vision
 const values = [
   {
     icon: Target,
     title: "Our Mission",
     description:
       "To solve real, high-impact challenges faced by the Indian banking and financial services ecosystem through innovative technology solutions.",
+    color: "text-blue-600",
+    borderColor: "border-blue-600",
   },
   {
     icon: Eye,
     title: "Our Vision",
     description:
-      "To be the leading provider of secure, scalable, and future-ready technology that supports rapid digital transformation in India's expanding fintech landscape.",
+      "We believe regulatory compliance should be proactive, predictable, and technology-driven. Our goal is to become a trusted RegTech partner for Banks and NBFCs, transforming compliance from a cost centre into a source of operational strength.",
+    color: "text-green-600",
+    borderColor: "border-green-600",
   },
 ];
 
-// const team = [
-//   {
-//     name: "Leadership Team",
-//     role: "Chief Executive Officer",
-//     placeholder: "CEO",
-//   },
-//   {
-//     name: "Leadership Team",
-//     role: "Chief Technology Officer",
-//     placeholder: "CTO",
-//   },
-//   {
-//     name: "Leadership Team",
-//     role: "Chief Operating Officer",
-//     placeholder: "COO",
-//   },
-//   {
-//     name: "Leadership Team",
-//     role: "Head of Product",
-//     placeholder: "HP",
-//   },
-// ];
+// Data for Q&A Section
+const qaItems = [
+  {
+    question: "Why does NStechX exist?",
+    answer:
+      "The regulatory landscape for Banks and NBFCs is becoming increasingly complex, dynamic, and data-intensive. Frequent updates, tighter supervision, and growing expectations around transparency have made compliance a strategic challenge. We formed this RegTech company to help financial institutions meet these requirements efficiently, accurately, and at scale.",
+  },
+  {
+    question: "What exactly do we do?",
+    answer:
+      "Our RegTech solutions are purpose-built for the Banking and NBFC ecosystem. We address critical operational pain points through automation and intelligent controls. Our product suite includes solutions for Reconciliation, Unified Lending Interface (ULI) enablement, Fraud Risk Management Systems (FRMS), and other regulatory reporting needs.",
+  },
+];
 
-// const advisors = [
-//   {
-//     name: "Advisory Board",
-//     role: "Strategic Advisor",
-//     placeholder: "SA",
-//   },
-//   {
-//     name: "Advisory Board",
-//     role: "Investment Partner",
-//     placeholder: "IP",
-//   },
-// ];
+// Data for Key Features
+const features = [
+  "Plug-and-Play Integration – Seamlessly integrates with existing systems.",
+  "AI & Blockchain – Adds accuracy, speed, and regulatory compliance.",
+  "Flexible Onboarding – Go live quickly without major core platform changes.",
+  "Eliminate Inefficiencies – Automate operations to reduce cost and errors.",
+  "Transaction Complexity – Handles high-volume, multi-rail digital transactions.",
+  "Compliance-Ready – Meets audit and governance requirements out of the box.",
+  "Independent & Auditable – Provides transparent, system-agnostic reporting.",
+  "Real-Time Visibility – Instant insights and proactive exception handling.",
+];
 
 export default function About() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative py-16 md:py-20 lg:py-24 bg-[hsl(220,60%,10%)] overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-green-600 to-orange-500" />
+      {/* ------------------- HERO SECTION ------------------- */}
+      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center overflow-hidden py-10">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <motion.img
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            src={aboutImage}
+            alt="Modern fintech banking dashboard"
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-green-950/95 via-green-900/90 to-green-900/40" />
         </div>
+
+        {/* Hero Content */}
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-5xl mx-auto text-center"
-          >
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 md:mb-8">
-              Future-Ready AI – driven, system-agnostic RegTech Solutions for
-              Banks and Financial Institutions
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed">
+          <div className="max-w-4xl mx-auto text-center lg:text-left lg:mx-0">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-6"
+            >
+              Future-Ready AI–driven, System-Agnostic{" "}
+              <br className="hidden md:block" />
+              <span className="text-green-400">
+                RegTech Solutions for Banks and Financial Institutions
+              </span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-base sm:text-md text-green-50 leading-relaxed mb-8 max-w-3xl text-justify lg:text-left"
+            >
               NStechX India Pvt. Ltd. is a young and dynamic organization that
               empowers banks, NBFCs, and financial institutions with secure,
               scalable, and future-ready technology. Our solutions support rapid
               digital transformation while meeting evolving regulatory
               expectations. We are designed to deliver measurable operational
-              outcomes, enhanced transparency, and audit-ready compliance.
+              outcomes, enhanced transparency, and audit ready compliance.
               Positioned for strong growth in India's expanding fintech
               landscape, NStechX combines deep domain expertise with
               cutting-edge technology to address the most pressing challenges in
               financial services.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Why NStechX */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gradient-blue-light">
-        <div className="container mx-auto px-4 sm:px-6">
-          <FadeIn>
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Why NStechX?
-              </h2>
-            </div>
-          </FadeIn>
-
-          <div className="space-y-12 md:space-y-16">
-            <AnimatedSection>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-4 md:mb-6">
-                Why We Exist
-              </h3>
-              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
-                The regulatory landscape for Banks and NBFCs is becoming increasingly complex, dynamic, and data-intensive. Frequent regulatory updates, tighter supervision, and growing expectations around transparency, accuracy, and risk management have made compliance a strategic challenge rather than a back-office function. We have formed this Regulatory Technology (RegTech) company with a clear mission: to help financial institutions meet regulatory requirements efficiently, accurately, and at scale.
-              </p>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.1}>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-4 md:mb-6">
-                What We Do
-              </h3>
-              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-4 md:mb-6">
-                Our RegTech solutions are purpose-built for the Banking and NBFC ecosystem, addressing critical regulatory and operational pain points through automation and intelligent controls. Our product suite includes solutions for Reconciliation, Unified Lending Interface (ULI) enablement, Fraud Risk Management Systems (FRMS), and other regulatory reporting and compliance needs.
-              </p>
-              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
-                By reducing manual effort, eliminating data inconsistencies, and enabling real-time monitoring, our solutions help institutions: Stay continuously compliant with evolving regulations, minimize operational and regulatory risk, improve audit readiness and reporting accuracy, focus more on growth and customer outcomes.
-              </p>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.2}>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-4 md:mb-6">
-                Our Vision
-              </h3>
-              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
-                We believe regulatory compliance should be proactive, predictable, and technology-driven. Our goal is to become a trusted RegTech partner for Banks and NBFCs, transforming compliance from a cost centre into a source of operational strength and confidence.
-              </p>
-            </AnimatedSection>
+            </motion.p>
           </div>
         </div>
       </section>
 
-      {/* Key Features */}
-      <section className="py-16 md:py-20 lg:py-24 bg-background">
+      {/* ------------------- MISSION & VISION (Moved Up) ------------------- */}
+      <section className="py-16 bg-white relative -mt-10 z-20">
         <div className="container mx-auto px-4 sm:px-6">
-          <FadeIn>
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Our Solutions
-              </h2>
-            </div>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            {[
-              "Plug-and-Play Integration – Seamlessly integrates with your existing systems with minimal effort",
-              "AI and block chain technology for adding accuracy, speed and Regulatory Compliance",
-              "Flexible, Low-Impact Onboarding – Go live quickly without major changes to your core platforms",
-              "Eliminate Manual Inefficiencies – Automate operations to reduce cost, errors, and dependency on manual processes",
-              "Built for Transaction Complexity – Designed to handle high-volume, multi-rail digital transactions with ease",
-              "Compliance-Ready by Design – Meets growing regulatory, audit, and governance requirements out of the box",
-              "Truly Independent & Auditable – Provides transparent, system-agnostic reconciliation and reporting",
-              "Real-Time Visibility & Automation – Instant insights, real-time reports, and proactive exception handling",
-            ].map((feature, index) => (
-              <AnimatedSection key={feature} delay={index * 0.05}>
-                <motion.div
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-card p-6 rounded-xl border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 h-full flex items-start gap-3"
-                >
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground text-sm leading-relaxed">{feature}</span>
-                </motion.div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Mission & Vision */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gradient-blue-light">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {values.map((value, index) => (
-              <AnimatedSection key={value.title} delay={index * 0.1}>
-                <motion.div
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-card p-10 rounded-2xl border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300 h-full group"
-                >
-                  {/* Icon + Title row */}
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                      <value.icon className="w-7 h-7 text-white" />
-                    </div>
-
-                    <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                      {value.title}
-                    </h3>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-muted-foreground leading-relaxed">
-                    {value.description}
-                  </p>
-                </motion.div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Team */}
-      {/* <section className="py-16 md:py-20 lg:py-24 bg-gradient-blue-light">
-        <div className="container mx-auto px-4 sm:px-6">
-          <FadeIn>
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Leadership Team
-              </h2>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-                Experienced professionals driving innovation in financial
-                technology.
-              </p>
-            </div>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {team.map((member, index) => (
-              <AnimatedSection key={index} delay={index * 0.1}>
-                <motion.div
-                  whileHover={{ y: -8, scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-card p-8 rounded-xl border border-border text-center group hover:border-primary/30 hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="w-24 h-24 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-2xl font-bold text-secondary-foreground">
-                      {member.placeholder}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                    {member.name}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">{member.role}</p>
-                </motion.div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Advisors & Investors
-      <section className="py-16 md:py-20 lg:py-24 bg-background">
-        <div className="container mx-auto px-4 sm:px-6">
-          <FadeIn>
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Advisors & Investors
-              </h2>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-                Strategic partners supporting our growth and vision.
-              </p>
-            </div>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto">
-            {advisors.map((advisor, index) => (
-              <AnimatedSection key={index} delay={index * 0.1}>
-                <motion.div
-                  whileHover={{ y: -8, scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-card p-8 rounded-xl border border-border text-center group hover:border-primary/30 hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Users className="w-8 h-8 text-secondary-foreground" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                    {advisor.name}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {advisor.role}
-                  </p>
-                </motion.div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Stats Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gradient-blue-light">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 text-center">
-            {[
-              {
-                stat: "2024",
-                label: "Founded",
-                gradient: "from-green-500 to-green-600",
-              },
-              {
-                stat: "India",
-                label: "Headquartered",
-                gradient: "from-purple-500 to-pink-500",
-              },
-              {
-                stat: "RegTech",
-                label: "Focus Area",
-                gradient: "from-emerald-500 to-teal-500",
-              },
-            ].map((item, index) => (
-              <AnimatedSection key={item.label} delay={index * 0.1}>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <p
-                    className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent mb-3`}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {values.map((value, index) => {
+              const IconComponent = value.icon;
+              return (
+                <AnimatedSection key={value.title} delay={index * 0.1}>
+                  <motion.div
+                    whileHover={{ y: -5 }}
+                    className={`bg-white p-8 rounded-xl shadow-xl border-l-4 ${value.borderColor} h-full`}
                   >
-                    {item.stat}
-                  </p>
-                  <p className="text-muted-foreground">{item.label}</p>
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className={`p-3 rounded-full bg-slate-50`}>
+                        <IconComponent className={`w-8 h-8 ${value.color}`} />
+                      </div>
+                      <h3 className="text-2xl font-bold text-slate-800">
+                        {value.title}
+                      </h3>
+                    </div>
+                    <p className="text-base text-slate-600 leading-relaxed text-justify">
+                      {value.description}
+                    </p>
+                  </motion.div>
+                </AnimatedSection>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------- Q&A / CORE PURPOSE ------------------- */}
+      <section className="py-16 md:py-24 bg-slate-50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Understanding NStechX
+              </h2>
+              <p className="text-slate-500 max-w-2xl mx-auto">
+                Answering the critical questions about who we are and the value
+                we drive.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {/* Left Column: Questions & Answers */}
+            <div className="space-y-8">
+              {qaItems.map((item, index) => (
+                <AnimatedSection key={index} delay={index * 0.1}>
+                  <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                    <div className="flex gap-3 mb-3">
+                      <HelpCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                      <h3 className="text-xl font-bold text-slate-800">
+                        {item.question}
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 leading-relaxed text-justify pl-9">
+                      {item.answer}
+                    </p>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </div>
+
+            {/* Right Column: The Outcomes (What we deliver) */}
+            <AnimatedSection delay={0.3}>
+              <div className="bg-slate-900 text-white p-8 rounded-2xl h-full flex flex-col justify-center">
+                <h3 className="text-2xl font-bold mb-6 border-b border-slate-700 pb-4">
+                  What outcomes do we deliver?
+                </h3>
+                <p className="text-slate-300 mb-6">
+                  By reducing manual effort and eliminating data
+                  inconsistencies, we help institutions:
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    "Stay continuously compliant with regulations",
+                    "Minimize operational and regulatory risk",
+                    "Improve audit readiness and accuracy",
+                    "Focus more on growth and customer outcomes",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
+                      <span className="text-lg text-slate-200">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------- KEY FEATURES ------------------- */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Key Features
+              </h2>
+              <div className="w-20 h-1 bg-green-600 mx-auto rounded-full"></div>
+            </div>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            {features.map((feature, index) => (
+              <AnimatedSection key={index} delay={index * 0.05}>
+                <motion.div
+                  whileHover={{ scale: 1.02, backgroundColor: "#f8fafc" }} // hover:bg-slate-50
+                  className="p-6 rounded-xl border border-slate-100 hover:border-green-200 shadow-sm hover:shadow-md transition-all duration-300 flex items-start gap-4 h-full"
+                >
+                  <div className="bg-green-100 p-2 rounded-lg flex-shrink-0">
+                    <ArrowRight className="w-5 h-5 text-green-700" />
+                  </div>
+                  <span className="text-slate-700 text-base font-medium leading-relaxed">
+                    {feature}
+                  </span>
                 </motion.div>
               </AnimatedSection>
             ))}
