@@ -1,26 +1,6 @@
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { MapPin, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedSection, FadeIn } from "@/components/AnimatedSection";
-
-// Data for Contact Cards
-const contactInfo = [
-  {
-    icon: Mail,
-    label: "Email Us",
-    value: "contactus@nstechx.co.in",
-    displayValue: "contactus@nstechx.co.in",
-    href: "mailto:contactus@nstechx.co.in",
-    color: "bg-blue-50 text-blue-600",
-  },
-  {
-    icon: Phone,
-    label: "Call Us",
-    value: "7208814414",
-    displayValue: "+91 72088 14414",
-    href: "tel:7208814414",
-    color: "bg-green-50 text-green-600",
-  },
-];
 
 const officeInfo = [
   {
@@ -105,37 +85,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Cards */}
-      {/* <section className="py-10 md:py-12 lg:py-14 bg-background">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {contactInfo.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <AnimatedSection key={item.label} delay={index * 0.1}>
-                  <motion.a
-                    href={item.href}
-                    whileHover={{ y: -5 }}
-                    className="flex flex-col items-center p-8 bg-card rounded-2xl shadow-lg border border-border hover:border-primary/30 transition-all duration-300 h-full group text-center"
-                  >
-                    <div
-                      className={`p-6 rounded-xl ${item.color} mb-4 group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <Icon className="w-12 h-12" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">
-                      {item.label}
-                    </h3>
-                    <p className="text-sm sm:text-base text-muted-foreground group-hover:text-primary transition-colors">
-                      {item.displayValue}
-                    </p>
-                  </motion.a>
-                </AnimatedSection>
-              );
-            })}
-          </div>
-        </div>
-      </section> */}
     </>
   );
 }

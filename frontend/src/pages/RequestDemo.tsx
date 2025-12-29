@@ -106,7 +106,7 @@ export default function RequestDemo() {
         throw new Error("Failed to submit request");
       }
 
-      const result = await response.json();
+      await response.json();
 
       // Show success message
       toast.success("Demo Request Submitted!", {

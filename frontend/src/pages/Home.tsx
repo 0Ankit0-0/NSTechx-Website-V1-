@@ -1,17 +1,8 @@
 import { Link } from "react-router-dom";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import heroImage from "@/assets/hero-fintech.jpg";
-
-const capabilities = [
-  "System-agnostic integration",
-  "End-to-end reconciliation",
-  "Dispute management",
-  "Settlement automation",
-  "Regulatory reporting",
-  "Audit trail visibility",
-];
 
 export default function Home() {
   return (
@@ -87,47 +78,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Capabilities Section
-      <section className="py-16 md:py-20 lg:py-24 bg-background">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
-            <AnimatedSection>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 md:mb-6">
-                Comprehensive Financial Operations Platform
-              </h2>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 md:mb-10 text-justify">
-                NStechX India Pvt. Ltd. is a Reg-tech company built with a
-                vision to solve real, high-impact challenges faced by the Indian
-                banking and financial services ecosystem. As a young and dynamic
-                organization, we empower banks, NBFCs, and financial
-                institutions with secure, scalable, and future-ready technology
-                that supports rapid digital transformation while meeting
-                evolving regulatory expectations. Our solutions are designed to
-                deliver measurable operational outcomes, enhanced transparency,
-                and audit-ready compliance-positioning NStechX for strong growth
-                in India’s expanding fintech landscape. Positioned for strong
-                growth in India's expanding fintech landscape, NStechX combines
-                deep domain expertise with cutting-edge technology to address
-                the most pressing challenges in financial services.
-              </p>
-            </AnimatedSection>
-            <AnimatedSection>
-              <div className="space-y-4">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground mb-4">Key Capabilities</h3>
-                <ul className="space-y-3">
-                  {capabilities.map((capability, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-sm sm:text-base text-muted-foreground">{capability}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section> */}
 
       {/* CTA Section */}
       <section className="py-16 md:py-20 lg:py-24 bg-gradient-blue-light relative overflow-hidden">
