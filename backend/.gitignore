@@ -32,6 +32,11 @@ venv/*
 # Database
 *.duckdb
 *.duckdb.wal
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite3.db
+*.sqlite3.db-journal
 
 # IDE
 .vscode/

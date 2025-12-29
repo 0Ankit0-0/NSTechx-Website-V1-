@@ -1,4 +1,4 @@
-# Verif.ai Demo Request Backend API
+# NSTechX Demo Request Backend API
 
 A production-ready FastAPI backend for handling demo requests in a B2B SaaS product.
 
@@ -39,15 +39,65 @@ backend/
 
 ## Installation
 
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
+1.  **Navigate to the backend directory:**
+    ```bash
+    cd backend
+    ```
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+2.  **Create a virtual environment:**
+    It's highly recommended to use a virtual environment to manage dependencies.
+
+    *   On Windows:
+        ```bash
+        python -m venv venv
+        venv\Scripts\activate
+        ```
+    *   On macOS/Linux:
+        ```bash
+        python3 -m venv venv
+        source venv/bin/activate
+        ```
+
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Configuration
+
+This project uses a `.env` file to manage environment variables for security and portability.
+
+1.  **Create a `.env` file** in the `backend` directory.
+2.  **Add the following variables** to the file. Below is an example configuration:
+
+    ```env
+    # Application Environment: 'development' or 'production'
+    # In 'development', CORS is open for localhost. In 'production', it's restricted.
+    ENVIRONMENT=development
+
+    # Logging Level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+    LOG_LEVEL=INFO
+
+    # --- Database ---
+    # Path to the DuckDB database file
+    DATABASE_PATH=./verif_demo_requests.duckdb
+
+    # --- Email Service (SMTP) ---
+    # Your SMTP server address
+    SMTP_SERVER=smtp.your-email-provider.com
+    
+    # Your SMTP server port (587 for TLS, 465 for SSL)
+    SMTP_PORT=587
+
+    # The email address the application sends from
+    SENDER_EMAIL=you@your-domain.com
+
+    # The password or app-specific password for the sender email account
+    SENDER_PASSWORD=your-email-password
+
+    # The internal email address that receives new demo request notifications
+    INTERNAL_RECIPIENT=sales@your-company.com
+    ```
 
 ## Running the Application
 
@@ -104,20 +154,6 @@ The `demo_requests` table includes:
 - `status`: Request status (NEW, CONTACTED, QUALIFIED, DISQUALIFIED)
 - `source`: Always "request-demo"
 - `created_at`: UTC timestamp
-
-## Email Configuration
-
-Email sending uses SMTP with placeholders. Configure the following in `services/email_service.py`:
-
-```python
-self.smtp_server = "your-smtp-server.com"
-self.smtp_port = 587  # or 465 for SSL
-self.sender_email = "noreply@yourcompany.com"
-self.sender_password = "your-smtp-password"
-self.internal_recipient = "sales@yourcompany.com"
-```
-
-Uncomment the SMTP code in the email service methods for actual sending.
 
 ## Rate Limiting
 

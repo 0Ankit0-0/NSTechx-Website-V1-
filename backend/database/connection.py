@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DATABASE_PATH = os.getenv('DATABASE_PATH', './verif_demo_requests.db')
+DATABASE_PATH = os.getenv('DATABASE_PATH', './nstechx.db')
 
 def get_db_connection():
     """Get a SQLite connection"""
