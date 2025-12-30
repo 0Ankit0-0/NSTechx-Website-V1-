@@ -4,20 +4,21 @@ A production-ready FastAPI backend for handling demo requests in a B2B SaaS prod
 
 ## Features
 
-- **Input Validation**: Comprehensive validation using Pydantic models
-- **Database Storage**: DuckDB for persistent data storage
-- **Email Notifications**: SMTP-based email sending (with placeholders)
-- **Clean Architecture**: Separated into routers, services, and database layers
-- **Error Handling**: Proper HTTP status codes and error responses
-- **CORS Support**: Configured for frontend integration
+- **Input Validation**: Comprehensive validation using Pydantic models.
+- **Database Storage**: PostgreSQL for robust and scalable data persistence.
+- **Email Notifications**: SMTP-based email sending.
+- **Clean Architecture**: Separated into routers, services, and database layers.
+- **Error Handling**: Proper HTTP status codes and error responses.
+- **CORS Support**: Configured for frontend integration.
 
 ## Tech Stack
 
 - **Framework**: FastAPI
-- **Database**: DuckDB (file-based, embedded)
-- **Email**: SMTP (with placeholders)
+- **Database**: PostgreSQL
+- **Dependencies**: `psycopg2-binary` for database connection.
+- **Email**: Standard library `smtplib`.
 - **Validation**: Pydantic
-- **ASGI Server**: Uvicorn
+- **ASGI Server**: Uvicorn/Gunicorn
 
 ## Project Structure
 
@@ -26,15 +27,16 @@ backend/
 ├── app.py                 # Main FastAPI application
 ├── run.py                 # Development server script
 ├── requirements.txt       # Python dependencies
-├── README.md             # This file
+├── README.md              # This file
+├── .env.example           # Example environment variables
 ├── models/
-│   └── demo_request.py   # Pydantic models
+│   └── demo_request.py    # Pydantic models for request validation
 ├── routers/
-│   └── demo.py           # API endpoints
+│   └── demo.py            # API endpoints for demo requests
 ├── services/
-│   └── email_service.py  # Email sending service
+│   └── email_service.py   # Email sending logic
 └── database/
-    └── connection.py     # Database connection and initialization
+    └── connection.py      # PostgreSQL connection and CRUD functions
 ```
 
 ## Installation
@@ -45,8 +47,6 @@ backend/
     ```
 
 2.  **Create a virtual environment:**
-    It's highly recommended to use a virtual environment to manage dependencies.
-
     *   On Windows:
         ```bash
         python -m venv venv
@@ -65,52 +65,58 @@ backend/
 
 ## Configuration
 
-This project uses a `.env` file to manage environment variables for security and portability.
+This project uses a `.env` file to manage environment variables.
 
-1.  **Create a `.env` file** in the `backend` directory.
-2.  **Add the following variables** to the file. Below is an example configuration:
+1.  **Create a `.env` file** in the `backend` directory by copying the example:
+    ```bash
+    cp .env.example .env
+    ```
+
+2.  **Set up PostgreSQL:**
+    You need a running PostgreSQL instance. You can either install it locally or use a managed cloud service (like AWS RDS, Heroku Postgres, etc.).
+
+    *   **Install PostgreSQL:** Follow the official instructions for your operating system.
+    *   **Create a database:** Create a user and a database for this application. For example:
+        ```sql
+        CREATE DATABASE nstechx_db;
+        CREATE USER nstechx_user WITH PASSWORD 'your_secure_password';
+        GRANT ALL PRIVILEGES ON DATABASE nstechx_db TO nstechx_user;
+        ```
+
+3.  **Update the `.env` file** with your configuration:
 
     ```env
-    # Application Environment: 'development' or 'production'
-    # In 'development', CORS is open for localhost. In 'production', it's restricted.
-    ENVIRONMENT=development
+    # --- Database ---
+    # Connection string for your PostgreSQL database.
+    # Format: postgresql://[user]:[password]@[host]:[port]/[dbname]
+    DATABASE_URL="postgresql://nstechx_user:your_secure_password@localhost:5432/nstechx_db"
 
+    # --- Application Settings ---
     # Logging Level: DEBUG, INFO, WARNING, ERROR, CRITICAL
     LOG_LEVEL=INFO
 
-    # --- Database ---
-    # Path to the DuckDB database file
-    DATABASE_PATH=./verif_demo_requests.duckdb
-
     # --- Email Service (SMTP) ---
-    # Your SMTP server address
     SMTP_SERVER=smtp.your-email-provider.com
-    
-    # Your SMTP server port (587 for TLS, 465 for SSL)
     SMTP_PORT=587
-
-    # The email address the application sends from
     SENDER_EMAIL=you@your-domain.com
-
-    # The password or app-specific password for the sender email account
     SENDER_PASSWORD=your-email-password
-
-    # The internal email address that receives new demo request notifications
     INTERNAL_RECIPIENT=sales@your-company.com
     ```
 
 ## Running the Application
 
+When you run the application for the first time, it will automatically create the necessary `demo_requests` table in the database specified by your `DATABASE_URL`.
+
 ### Development Mode
 ```bash
 python run.py
 ```
-
-The API will be available at `http://localhost:8000`
+The API will be available at `http://localhost:8000`. The interactive API documentation (Swagger UI) can be accessed at `http://localhost:8000/docs`.
 
 ### Production Mode
+For production, use a process manager like Gunicorn to run the Uvicorn server.
 ```bash
-uvicorn app:app --host 0.0.0.0 --port 8000
+gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app --bind 0.0.0.0:8000
 ```
 
 ## API Endpoints
@@ -129,89 +135,24 @@ Handles demo request submissions.
 }
 ```
 
-**Response:**
+**Successful Response (200 OK):**
 ```json
 {
-  "success": true
+  "message": "Demo request submitted successfully. We will be in touch shortly.",
+  "request_id": 123
 }
 ```
 
-**Validation Rules:**
-- `firstName`/`lastName`: 2-50 characters, letters and spaces only
-- `workEmail`: Valid email, rejects free providers (gmail.com, yahoo.com, etc.)
-- `contactNumber`: 10-15 digits, allows +, spaces, ()
-- `requirements`: 20-1000 characters
-
 ## Database Schema
 
-The `demo_requests` table includes:
-- `id`: Auto-increment primary key
-- `first_name`, `last_name`: Requester's name
-- `work_email`: Normalized email address
-- `email_domain`: Extracted domain
-- `contact_number`: Phone number
-- `requirements`: Requirements text
-- `status`: Request status (NEW, CONTACTED, QUALIFIED, DISQUALIFIED)
-- `source`: Always "request-demo"
-- `created_at`: UTC timestamp
+The `demo_requests` table is created with the following columns:
+- `id`: `SERIAL PRIMARY KEY`
+- `first_name`, `last_name`: `VARCHAR(50)`
+- `work_email`, `email_domain`: `VARCHAR(255)`
+- `contact_number`: `VARCHAR(15)`
+- `requirements`: `TEXT`
+- `status`: `VARCHAR(20)` (Default: 'NEW')
+- `source`: `VARCHAR(50)` (Default: 'request-demo')
+- `created_at`: `TIMESTAMP WITH TIME ZONE` (Default: `CURRENT_TIMESTAMP`)
 
-## Rate Limiting
-
-Basic rate limiting can be added using FastAPI's dependencies or middleware like `slowapi`. Placeholder for implementation:
-
-```python
-from slowapi import Limiter, _rate_limit_exceeded_handler
-from slowapi.util import get_remote_address
-from slowapi.errors import RateLimitExceeded
-from slowapi.middleware import SlowAPIMiddleware
-
-# Add to app.py
-limiter = Limiter(key_func=get_remote_address)
-app.state.limiter = limiter
-app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
-app.add_middleware(SlowAPIMiddleware)
-
-# Add to endpoint
-@router.post("/request-demo", dependencies=[Depends(RateLimiter(times=5, seconds=60))])
-```
-
-## Security Considerations
-
-- Never hardcode SMTP credentials
-- Use environment variables for sensitive configuration
-- Implement proper authentication/authorization for production
-- Add request logging and monitoring
-- Consider using a proper database for concurrent access in production
-
-## Testing
-
-Run the application and test the endpoint using tools like:
-- curl
-- Postman
-- Frontend application
-
-Example curl command:
-```bash
-curl -X POST "http://localhost:8000/api/request-demo" \
-     -H "Content-Type: application/json" \
-     -d '{
-       "firstName": "John",
-       "lastName": "Doe",
-       "workEmail": "john.doe@company.com",
-       "contactNumber": "+1234567890",
-       "requirements": "We need AI-powered reconciliation for our banking operations."
-     }'
-```
-
-## Production Deployment
-
-- Use a production ASGI server like Gunicorn with Uvicorn workers
-- Set up proper logging
-- Configure environment variables
-- Set up database backups
-- Implement monitoring and alerting
-- Use HTTPS in production
-
-## License
-
-This project is part of the Verif.ai B2B SaaS product.
+Indexes are automatically created on `work_email` and `created_at` for faster queries.
