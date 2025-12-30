@@ -34,13 +34,13 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm transition-all duration-300">
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-10 lg:h-14">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img
               src={logoImage}
               alt="NSTechX Logo"
-              className="h-10 lg:h-14 w-auto"
+              className="h-16 lg:h-20 w-auto"
             />
           </Link>
 
