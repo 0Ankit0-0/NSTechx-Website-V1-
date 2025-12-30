@@ -26,7 +26,7 @@ export function Footer() {
           <div className="flex items-center gap-6 text-sm">
             {[
               { label: "Home", path: "/" },
-              { label: "Products & Solutions", path: "/product" },
+              // { label: "Products & Solutions", path: "/product" },
               { label: "About Us", path: "/about" },
               { label: "Our Team", path: "/our-team" },
               { label: "Careers", path: "/careers" },
