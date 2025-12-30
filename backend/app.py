@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routers import demo
-from database.connection import initialize_database
+from database.connection import connect_to_mongo, close_mongo_connection
 from loguru import logger
 import sys
 import os
@@ -56,16 +56,21 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Initialize database on startup
+# Connect to database on startup
 @app.on_event("startup")
 async def startup_event():
     logger.info("Starting NStechX Demo Request API...")
     try:
-        initialize_database()
-        logger.info("Database initialized successfully")
+        connect_to_mongo()
+        logger.info("Connected to database successfully")
     except Exception as e:
-        logger.error(f"Failed to initialize database: {str(e)}")
+        logger.error(f"Failed to connect to database: {str(e)}")
         raise
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    logger.info("Closing database connection...")
+    close_mongo_connection()
 
 # Include routers
 app.include_router(demo.router, prefix="/api", tags=["Demo Requests"])
