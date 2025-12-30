@@ -26,9 +26,12 @@ export function Footer() {
           <div className="flex items-center gap-6 text-sm">
             {[
               { label: "Home", path: "/" },
-              { label: "Product", path: "/product" },
+              { label: "Products & Solutions", path: "/product" },
               { label: "About Us", path: "/about" },
-              { label: "Contact", path: "/contact" },
+              { label: "Our Team", path: "/our-team" },
+              { label: "Careers", path: "/careers" },
+              { label: "Newsletter and Media", path: "/newsletter-media" },
+              { label: "Contact Us", path: "/contact" },
             ].map((link, index, arr) => (
               <span key={link.path} className="flex items-center gap-6">
                 <Link
