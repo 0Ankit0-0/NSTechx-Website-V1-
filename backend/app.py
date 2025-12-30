@@ -10,6 +10,9 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
+# Define environment
+environment = os.getenv('ENVIRONMENT', 'development')
+
 # Configure Loguru
 log_level = os.getenv('LOG_LEVEL', 'INFO')
 logger.remove()  # Remove default handler
@@ -41,7 +44,8 @@ allowed_origins = [
     "http://localhost:5173",
     "http://127.0.0.1:3000",
     "http://127.0.0.1:5173",
-    "https://ns-techx-website-v1.vercel.app"
+    "https://ns-techx-website-v1.vercel.app",
+    "https://nstechx-website-v1.onrender.com",
 ]
 
 app.add_middleware(
@@ -55,7 +59,7 @@ app.add_middleware(
 # Initialize database on startup
 @app.on_event("startup")
 async def startup_event():
-    logger.info("Starting Verif.ai Demo Request API...")
+    logger.info("Starting NStechX Demo Request API...")
     try:
         initialize_database()
         logger.info("Database initialized successfully")
@@ -70,7 +74,7 @@ app.include_router(demo.router, prefix="/api", tags=["Demo Requests"])
 async def root():
     """Root endpoint"""
     return {
-        "message": "Verif.ai Demo Request API",
+        "message": "NStechX Demo Request API",
         "status": "active",
         "version": "1.0.0",
         "endpoints": {
@@ -95,5 +99,5 @@ if __name__ == "__main__":
         "app:app",
         host="0.0.0.0",
         port=8000,
-        reload=True if 'environment' in globals() and environment == 'development' else False
+        reload=True if environment == 'development' else False
     )
