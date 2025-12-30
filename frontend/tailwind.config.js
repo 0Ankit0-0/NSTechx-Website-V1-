@@ -124,12 +124,27 @@ export default {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+        blob: {
+          '0%': { transform: 'translate(0px, 0px) scale(1)' },
+          '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+          '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+          '100%': { transform: 'translate(0px, 0px) scale(1)' },
+        },
+        'bar-up': {
+          '0%': { height: '0%' },
+          '100%': { height: '100%' },
+        }
   		},
 		animation: {
 			'accordion-down': 'accordion-down 0.2s ease-out',
-			'accordion-up': 'accordion-up 0.2s ease-out'
+			'accordion-up': 'accordion-up 0.2s ease-out',
+      'blob': 'blob 7s infinite',
+      'bar-up': 'bar-up 1s ease-out forwards',
 		},
+    animationDelay: {
+      '4000': '4s',
+    },
 		backgroundImage: {
 			'gradient-green': 'linear-gradient(135deg, hsl(134 98% 38%) 0%, hsl(131 96% 27%) 100%)',
 			'gradient-green-light': 'linear-gradient(135deg, hsl(134 95% 97%) 0%, hsl(134 90% 92%) 100%)',

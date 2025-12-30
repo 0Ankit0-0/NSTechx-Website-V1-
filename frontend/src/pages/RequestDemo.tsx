@@ -129,37 +129,66 @@ export default function RequestDemo() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-green-900 via-green-800 to-green-900 overflow-hidden relative">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-orange-500 to-green-600" />
-        </div>
+      <section className="relative w-full py-20 lg:py-24 bg-gray-900 text-white overflow-hidden">
+        {/* Background Shapes */}
+        <div className="absolute top-0 -left-4 w-72 h-72 bg-green-500 rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute bottom-0 -right-4 w-72 h-72 bg-orange-500 rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side: Text Content */}
             <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex items-center justify-center w-16 h-16 bg-orange-500 rounded-2xl mb-6 shadow-2xl"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              <Briefcase className="w-8 h-8 text-white" />
+              <h1 className="text-4xl md:text-5xl font-bold !leading-tight mb-4">
+                See Verif.ai in Action
+              </h1>
+              <p className="text-lg md:text-xl text-gray-300 mb-8">
+                Discover how our AI-driven platform can eliminate manual errors,
+                ensure compliance, and provide real-time financial insights.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <CheckCircle2 className="w-6 h-6 text-green-400 mr-3 flex-shrink-0" />
+                  <span className="text-gray-200">AI-Powered Reconciliation</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle2 className="w-6 h-6 text-green-400 mr-3 flex-shrink-0" />
+                  <span className="text-gray-200">Automated Compliance Checks</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle2 className="w-6 h-6 text-green-400 mr-3 flex-shrink-0" />
+                  <span className="text-gray-200">Seamless ERP Integration</span>
+                </div>
+              </div>
             </motion.div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4 md:mb-6">
-              Request a Demo
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-green-50 leading-relaxed mb-4">
-              Discover how Verif.ai can transform your financial operations with
-              AI-driven reconciliation and compliance solutions.
-            </p>
-            <p className="text-sm sm:text-base text-green-100 leading-relaxed">
-              Fill out the form below and our team will get in touch with you
-              within 24 hours.
-            </p>
-          </motion.div>
+
+            {/* Right Side: Visual Element */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="hidden lg:flex justify-center items-center"
+            >
+              <div className="w-full max-w-md h-80 bg-gray-800/50 rounded-2xl border border-gray-700 p-6 shadow-2xl backdrop-blur-lg relative flex flex-col justify-between">
+                <div className="flex justify-between items-center">
+                  <p className="text-sm text-gray-400">Financial Data Analysis</p>
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                </div>
+                <div className="flex-grow flex items-end space-x-2">
+                  <div className="w-1/4 h-2/3 bg-green-500/30 rounded-t-lg animate-bar-up" style={{ animationDelay: '0s' }}></div>
+                  <div className="w-1/4 h-1/2 bg-green-500/50 rounded-t-lg animate-bar-up" style={{ animationDelay: '0.2s' }}></div>
+                  <div className="w-1/4 h-3/4 bg-orange-500/60 rounded-t-lg animate-bar-up" style={{ animationDelay: '0.1s' }}></div>
+                  <div className="w-1/4 h-2/5 bg-green-500/40 rounded-t-lg animate-bar-up" style={{ animationDelay: '0.3s' }}></div>
+                </div>
+                <div className="absolute bottom-6 right-6 w-24 h-12 bg-gray-900 rounded-lg flex items-center justify-center">
+                  <p className="text-orange-500 font-bold text-lg">99.8%</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
