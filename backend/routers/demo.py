@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, HTTPException, status, BackgroundTasks
 from models.demo_request import DemoRequestCreate
 from services.email_service import EmailService
 from database.connection import insert_demo_request
@@ -9,10 +9,10 @@ router = APIRouter()
 email_service = EmailService()
 
 @router.post("/request-demo", status_code=status.HTTP_201_CREATED)
-async def request_demo(demo_request: DemoRequestCreate):
+async def request_demo(demo_request: DemoRequestCreate, background_tasks: BackgroundTasks):
     """
     Handle demo request form submission.
-    Stores in database and sends confirmation emails.
+    Stores in database and sends confirmation emails in the background.
     """
     try:
         logger.info(f"Received demo request from {demo_request.workEmail}")
@@ -43,17 +43,11 @@ async def request_demo(demo_request: DemoRequestCreate):
                 detail="Failed to save demo request"
             )
         
-        # Send confirmation email to the user
-        user_email_sent = email_service.send_auto_reply(demo_data)
-        if not user_email_sent:
-            logger.warning("Failed to send confirmation email to user")
+        # Add email sending to background tasks
+        background_tasks.add_task(email_service.send_auto_reply, demo_data)
+        background_tasks.add_task(email_service.send_internal_notification, demo_data)
         
-        # Send notification to internal sales team
-        internal_email_sent = email_service.send_internal_notification(demo_data)
-        if not internal_email_sent:
-            logger.warning("Failed to send internal notification email")
-        
-        logger.info(f"Demo request processed successfully for {demo_request.workEmail}")
+        logger.info(f"Email sending for {demo_request.workEmail} has been scheduled in the background.")
         
         return {
             "success": True,
