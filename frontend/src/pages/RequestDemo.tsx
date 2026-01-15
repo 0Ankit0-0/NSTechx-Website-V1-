@@ -18,6 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import demoImage from "@/assets/png_jpg_jpeg_images/Demo.png";
 
 // Form validation schema
 const formSchema = z.object({
@@ -136,10 +137,23 @@ export default function RequestDemo() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative w-full py-20 lg:py-24 bg-gray-900 text-white overflow-hidden">
+      <section className="relative min-h-[60vh] md:min-h-[70vh] lg:min-h-[75vh] flex items-center overflow-hidden text-white">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <motion.img
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            src={demoImage}
+            alt="Demo"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-900/95 via-green-800/90 to-green-900/30" />
+        </div>
+
         {/* Background Shapes */}
         <div className="absolute top-0 -left-4 w-72 h-72 bg-green-500 rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute bottom-0 -right-4 w-72 h-72 bg-orange-500 rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div className="absolute bottom-0 -right-4 w-72 h-72 bg-green-600 rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -150,7 +164,7 @@ export default function RequestDemo() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl md:text-5xl font-bold !leading-tight mb-4">
-                See NSTechx products in Action
+                See NStechX products in Action
               </h1>
               <p className="text-lg md:text-xl text-gray-300 mb-8">
                 Discover how our AI-driven platform can eliminate manual errors,
@@ -336,7 +350,7 @@ export default function RequestDemo() {
                       <Button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full h-12 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-medium text-base shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="w-full h-12 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium text-base shadow-lg hover:shadow-xl transition-all duration-300"
                       >
                         {isSubmitting ? (
                           <>

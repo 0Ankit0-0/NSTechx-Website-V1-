@@ -11,8 +11,8 @@ import {
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AnimatedSection, FadeIn } from "@/components/AnimatedSection";
-import productImage from "@/assets/product-verifai.jpg";
-import verifLogo from "@/assets/Verif w TM.png";
+import productImage from "@/assets/png_jpg_jpeg_images//product-verifai.jpg";
+import verifLogo from "@/assets/webp_images/Verif w TM.webp";
 
 const features = [
   "AI-powered transaction matching",
@@ -214,7 +214,7 @@ export default function ReconciliationBanks() {
               >
                 <Link
                   to="/request-demo"
-                  className="inline-flex items-center gap-2 bg-gradient-orange text-white px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg font-medium hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
+                  className="inline-flex items-center gap-2 bg-orange-500 text-white px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg font-medium hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
                 >
                   Request a Demo
                   <ArrowRight size={18} />
@@ -233,7 +233,7 @@ export default function ReconciliationBanks() {
                     {
                       label: "Compliance Coverage",
                       value: "100%",
-                      gradient: "from-orange-500 to-orange-600",
+                      gradient: "from-blue-500 to-blue-600",
                     },
                     {
                       label: "Integration Type",
@@ -243,7 +243,7 @@ export default function ReconciliationBanks() {
                     {
                       label: "Automation Level",
                       value: "AI-Driven",
-                      gradient: "from-orange-600 to-orange-700",
+                      gradient: "from-blue-600 to-blue-700",
                     },
                   ].map((item, index) => (
                     <motion.div

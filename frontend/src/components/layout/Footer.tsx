@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoImage from "@/assets/logo_wo_bg.png";
+import logoImage from "@/assets/webp_images/NSTECH_NAV_logo.webp";
 
 export function Footer() {
   return (
@@ -7,7 +7,7 @@ export function Footer() {
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-96 h-96 bg-green-500 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
       </div>
 
       <div className="relative z-10 container mx-auto px-6 py-8">
@@ -23,27 +23,22 @@ export function Footer() {
           </Link>
 
           {/* Quick Links */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-sm">
+          <div className="grid grid-cols-3 gap-4 text-sm sm:flex sm:flex-wrap sm:justify-center sm:gap-6">
             {[
-              { label: "Home", path: "/" },
-              // { label: "Products & Solutions", path: "/product" },
               { label: "About Us", path: "/about" },
               { label: "Our Team", path: "/our-team" },
               { label: "Careers", path: "/careers" },
               { label: "Newsletter and Media", path: "/newsletter-media" },
               { label: "Contact Us", path: "/contact" },
-            ].map((link, index, arr) => (
-              <span key={link.path} className="flex items-center gap-2 sm:gap-6">
-                <Link
-                  to={link.path}
-                  className="text-[hsl(220,10%,70%)] hover:text-green-400 transition-colors"
-                >
-                  {link.label}
-                </Link>
-                {index < arr.length - 1 && (
-                  <span className="text-white/20 hidden sm:inline">|</span>
-                )}
-              </span>
+              { label: "Request Demo", path: "/request-demo" },
+            ].map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className="text-[hsl(220,10%,70%)] hover:text-green-400 transition-colors"
+              >
+                {link.label}
+              </Link>
             ))}
           </div>
 

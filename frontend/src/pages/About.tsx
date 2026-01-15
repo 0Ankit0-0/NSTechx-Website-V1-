@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedSection, FadeIn } from "@/components/AnimatedSection";
-import aboutImage from "@/assets/about-office.jpg";
+import aboutImage from "@/assets/webp_images/about-office.webp";
 
 // Data for Mission & Vision
 const values = [
@@ -111,7 +111,7 @@ export default function About() {
       </section>
 
       {/* ------------------- MISSION & VISION (Moved Up) ------------------- */}
-      <section className="py-16 bg-white relative -mt-10 z-20">
+      <section className="py-16 bg-gradient-to-br from-green-50 to-green-100 relative -mt-10 z-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {values.map((value, index) => {
@@ -206,7 +206,7 @@ export default function About() {
       </section>
 
       {/* ------------------- KEY FEATURES ------------------- */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-green-50 to-green-100">
         <div className="container mx-auto px-4 sm:px-6">
           <FadeIn>
             <div className="text-center mb-16">
@@ -227,7 +227,7 @@ export default function About() {
                   <div className="bg-green-100 p-2 rounded-lg flex-shrink-0">
                     <ArrowRight className="w-5 h-5 text-green-700" />
                   </div>
-                  <span className="text-slate-700 text-base font-medium leading-relaxed">
+                  <span className="text-slate-800 text-base font-bold leading-relaxed text-black-600">
                     {feature}
                   </span>
                 </motion.div>

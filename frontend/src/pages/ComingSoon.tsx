@@ -43,7 +43,7 @@ export default function ComingSoon({ title }: ComingSoonProps) {
           >
             <Link
               to="/"
-              className="inline-flex items-center gap-2 bg-gradient-orange text-white px-6 py-3 rounded-lg font-medium hover:shadow-xl transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-lg font-medium hover:shadow-xl transition-all duration-300"
             >
               <ArrowLeft size={18} />
               Back to Home

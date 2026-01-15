@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import heroImage from "@/assets/hero-fintech.jpg";
+import heroImage from "@/assets/webp_images/hero-fintech.webp";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
           <motion.img
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             src={heroImage}
             alt="Modern fintech banking dashboard"
             className="w-full h-full object-cover"
@@ -28,7 +28,7 @@ export default function Home() {
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.4 }}
               className="inline-block text-green-300 font-medium text-xs sm:text-sm uppercase tracking-wider mb-3"
             >
               ENTERPRISE REG-TECH SOLUTIONS
@@ -36,35 +36,28 @@ export default function Home() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.4, delay: 0.05 }}
               className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-6"
             >
               Future-Ready Reconciliation For Banks & Financial Institutions
             </motion.h1>
-            <motion.p
+            <motion.ul
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-sm sm:text-base text-green-50 leading-relaxed mb-4 md:mb-6 max-w-3xl mx-auto lg:mx-0 text-justify"
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="text-sm sm:text-base text-green-50 leading-relaxed mb-4 md:mb-6 max-w-3xl mx-auto lg:mx-0 space-y-2"
             >
-              NStechX India Pvt. Ltd. is a Reg-tech company built with a
-                vision to solve real, high-impact challenges faced by the Indian
-                banking and financial services ecosystem. As a young and dynamic
-                organization, we empower banks, NBFCs, and financial
-                institutions with secure, scalable, and future-ready technology
-                that supports rapid digital transformation while meeting
-                evolving regulatory expectations. Our solutions are designed to
-                deliver measurable operational outcomes, enhanced transparency,
-                and audit-ready compliance-positioning NStechX for strong growth
-                in India’s expanding fintech landscape. Positioned for strong
-                growth in India's expanding fintech landscape, NStechX combines
-                deep domain expertise with cutting-edge technology to address
-                the most pressing challenges in financial services.
-            </motion.p>
+              <li>• Reg-tech company solving high-impact challenges in the Indian banking and financial services ecosystem</li>
+              <li>• Young and dynamic organization empowering banks, NBFCs, and financial institutions</li>
+              <li>• Provides secure, scalable, future-ready technology for digital transformation and regulatory compliance</li>
+              <li>• Solutions deliver measurable operational outcomes, enhanced transparency, and audit-ready compliance</li>
+              <li>• Strong growth in India's expanding fintech landscape</li>
+              <li>• Combines deep domain expertise with cutting-edge technology</li>
+            </motion.ul>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.4, delay: 0.15 }}
               className="flex flex-col sm:flex-row gap-4"
             >
               <Link
@@ -82,7 +75,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-16 md:py-20 lg:py-24 bg-gradient-blue-light relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-green-600 to-orange-500" />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-green-600 to-blue-500" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
           <AnimatedSection>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
-import logoImage from "@/assets/NSTechX.png";
+import logoImage from "@/assets/webp_images/NSTECH_NAV_logo.webp";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -107,7 +107,7 @@ export function Navbar() {
             {/* Request Demo CTA Button */}
             <Link
               to="/request-demo"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-5 py-2.5 rounded-lg font-medium hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-700 hover:from-orange-600 hover:to-orange-800 text-white px-5 py-2.5 rounded-lg font-medium hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm"
             >
               Request Demo
             </Link>
@@ -127,23 +127,14 @@ export function Navbar() {
         {isOpen && (
           <div className="lg:hidden py-4 border-t border-border animate-in slide-in-from-top-4 duration-300">
             <div className="flex flex-col gap-2">
-              {/* Request Demo CTA Button - Mobile */}
-              <Link
-                to="/request-demo"
-                onClick={() => setIsOpen(false)}
-                className="mx-4 mb-2 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300 text-sm"
-              >
-                Request Demo
-              </Link>
-              
-              {navItems.map((item, index) => (
+              {navItems.slice(1).map((item, index) => (
                 <div key={item.path}>
                   {item.dropdown ? (
                     <div>
                       <button
                         onClick={() => setDropdownOpen(dropdownOpen === item.label ? null : item.label)}
                         style={{ animationDelay: `${index * 50}ms` }}
-                        className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 animate-in slide-in-from-top-2 flex items-center justify-between ${
+                        className={`w-full text-left px-6 py-3 rounded-lg text-sm font-medium transition-all duration-200 animate-in slide-in-from-top-2 flex items-center justify-between ${
                           isActive(item.path) || item.dropdown.some(sub => isActive(sub.path))
                             ? "bg-primary/10 text-primary"
                             : "text-muted-foreground hover:bg-accent hover:text-foreground"
@@ -162,7 +153,7 @@ export function Navbar() {
                                 setIsOpen(false);
                                 setDropdownOpen(null);
                               }}
-                              className={`block px-4 py-2 rounded-lg text-sm transition-all duration-200 animate-in slide-in-from-top-2 ${
+                              className={`block px-6 py-2 rounded-lg text-sm transition-all duration-200 animate-in slide-in-from-top-2 ${
                                 isActive(subItem.path)
                                   ? "bg-primary/10 text-primary"
                                   : "text-muted-foreground hover:bg-accent hover:text-foreground hover:translate-x-1"
@@ -179,7 +170,7 @@ export function Navbar() {
                       to={item.path}
                       onClick={() => setIsOpen(false)}
                       style={{ animationDelay: `${index * 50}ms` }}
-                      className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 animate-in slide-in-from-top-2 ${
+                      className={`px-6 py-3 rounded-lg text-sm font-medium transition-all duration-200 animate-in slide-in-from-top-2 ${
                         isActive(item.path)
                           ? "bg-primary/10 text-primary"
                           : "text-muted-foreground hover:bg-accent hover:text-foreground hover:translate-x-1"
@@ -190,6 +181,15 @@ export function Navbar() {
                   )}
                 </div>
               ))}
+
+              {/* Request Demo CTA Button - Mobile Bottom */}
+              <Link
+                to="/request-demo"
+                onClick={() => setIsOpen(false)}
+                className="mx-4 mt-2 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-700 text-white px-5 py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300 text-sm"
+              >
+                Request Demo
+              </Link>
             </div>
           </div>
         )}
