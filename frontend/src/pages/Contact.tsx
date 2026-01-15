@@ -2,9 +2,6 @@ import { Clock, MapPin, Send } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { AnimatedSection, FadeIn } from "@/components/AnimatedSection";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import heroImage from "@/assets/webp_images/hero-fintech.webp";
 
 const officeInfo = [
